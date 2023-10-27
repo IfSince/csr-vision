@@ -2,9 +2,9 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  metadata: {
+  siteMetadata: {
     title: 'csr vision',
-    description: 'Portfolio page for csr vision',
+    description: 'Portfolio Seite für csr vision',
     author: 'Leon Laade',
     siteUrl: 'https://csr.vision/',
     image: 'src/images/logo-variants/icon.svg',

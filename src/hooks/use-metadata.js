@@ -4,7 +4,7 @@ export const useMetadata = () => {
   const { site } = useStaticQuery(graphql`
         query {
           site {
-              metadata {
+              siteMetadata {
                   title
                   description
                   author
@@ -16,5 +16,5 @@ export const useMetadata = () => {
       }
   `)
 
-  return site.metadata
+  return site.siteMetadata
 }

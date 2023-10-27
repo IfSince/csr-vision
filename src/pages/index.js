@@ -3,12 +3,16 @@ import { Seo } from '../components/seo.js'
 
 const IndexPage = () => {
   return (
-    <main>
-      <H1 className="flex flex-col">
-        <span>design</span>
-        <span>responsibility.</span>
-      </H1>
-    </main>
+    <>
+      <header></header>
+      <main>
+        <H1 className="flex flex-col">
+          <span>design</span>
+          <span>responsibility.</span>
+        </H1>
+      </main>
+      <footer></footer>
+    </>
   )
 }
 
