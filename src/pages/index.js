@@ -1,8 +1,12 @@
+import { H1 } from '../components/typography/h1.js'
+
 const IndexPage = () => {
   return (
     <main>
-      Lorem
-
+      <H1 className="flex flex-col">
+        <span>design</span>
+        <span>responsibility.</span>
+      </H1>
     </main>
   )
 }
