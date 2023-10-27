@@ -2,16 +2,24 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  siteMetadata: {
+  metadata: {
     title: 'csr vision',
+    description: 'Portfolio page for csr vision',
+    author: 'Leon Laade',
     siteUrl: 'https://csr.vision/',
+    image: 'src/images/logo-variants/icon.svg',
+    keywords: 'csr, nachhaltigkeit',
   },
   flags: {
     DEV_SSR: true,
   },
   jsxRuntime: 'automatic',
   plugins: [
-    'gatsby-plugin-postcss', 'gatsby-plugin-image', 'gatsby-plugin-sharp', 'gatsby-transformer-sharp',
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

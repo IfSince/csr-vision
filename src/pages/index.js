@@ -1,4 +1,5 @@
 import { H1 } from '../components/typography/h1.js'
+import { Seo } from '../components/seo.js'
 
 const IndexPage = () => {
   return (
@@ -13,4 +14,4 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <Seo title="Home"/>
