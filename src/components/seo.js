@@ -27,7 +27,7 @@ export const Seo = ({ title, description, slug = '', children }) => {
       <meta name="twitter:url" content={ siteMetadata.siteUrl }/>
       <meta name="twitter:description" content={ metaDescription }/>
       <meta name="twitter:image" content={ siteMetadata.image }/>
-      <meta name="twitter:creator" content={ siteMetadata.author || `` }/>
+      <meta name="twitter:creator" content={ siteMetadata.author || '' }/>
       { children }
     </Helmet>
   )

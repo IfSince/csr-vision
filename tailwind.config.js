@@ -13,6 +13,19 @@ module.exports = {
         'overpass': ['Overpass', ...defaultTheme.fontFamily.sans],
         'undotted': ['Undotted', 'Overpass', ...defaultTheme.fontFamily.sans],
       },
+      theme: {
+        'xs': '350px',
+      },
+      borderRadius: {
+        '4xl': '2rem', // 32px
+        '5xl': '2.5rem', // 40px
+        '6xl': '3rem', // 48px
+        '7xl': '4rem', // 64px
+        '8xl': '5rem', // 80px
+      },
+      flexGrow: {
+        '9999': '9999',
+      }
     },
     colors: {
       'white': '#FAF9F6',
