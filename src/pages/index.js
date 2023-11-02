@@ -4,6 +4,8 @@ import { IconButton } from '../components/button/icon-button.js'
 import 'material-icons/iconfont/material-icons.css'
 import { AnimatedHeader } from '../components/animations/animated-header.js'
 import { motion } from 'framer-motion'
+import { HeaderSection } from '../components/layout/header-section.js'
+import { HeaderSectionReversed } from '../components/layout/header-section-reversed.js'
 
 const IndexPage = () => {
   return (
@@ -34,6 +36,9 @@ const IndexPage = () => {
           </div>
         </div>
 
+        <HeaderSection title="our vision" description="We want to elevate you to the next level."/>
+
+        <HeaderSectionReversed title="who we are" description="We want to elevate you to the next level."/>
       </main>
 
       <footer></footer>

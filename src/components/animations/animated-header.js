@@ -33,7 +33,7 @@ export const AnimatedHeader = ({ title }) => {
                  } }
     >
       {
-        title.split('').map((character, index) =>
+        word.split('').map((character, index) =>
           <motion.span className="inline-block"
                        key={ `${ character }${ index }` }
                        aria-hidden={ true }
