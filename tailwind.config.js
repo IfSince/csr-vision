@@ -23,6 +23,10 @@ module.exports = {
         '7xl': '4rem', // 64px
         '8xl': '5rem', // 80px
       },
+      maxWidth: {
+        'xxs': '16rem', // 256px
+        '8xl': '90rem' // 1440px
+      },
       flexGrow: {
         '9999': '9999',
       }
@@ -46,7 +50,7 @@ module.exports = {
       'h1': 'clamp(3.375rem, 10vw, 7.594rem)',
       'h2': 'clamp(3.375rem, 10vw, 7.594rem)',
       'h3': 'clamp(1.5rem, 4.5vw, 3.375rem)',
-      'h4': 'clamp(1.5rem, 4vw, 2.25rem)',
+      'h4': 'clamp(1.5rem, 5vw, 2.25rem)',
     },
   },
   plugins: [],
