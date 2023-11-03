@@ -4,7 +4,7 @@ import { H3 } from '../typography/h3.js'
 import { RouteButton } from '../button/route-button.js'
 
 export const HeaderSection = ({ title, description }) =>
-  <section className="flex flex-col border-t border-b border-black header-spacing">
+  <section className="flex flex-col border-t border-b border-black horizontal-spacing header-vertical-spacing">
     <H2 className="mb-36 lg:mb-24">
       <AnimatedHeader title={ title }/>
     </H2>

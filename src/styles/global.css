@@ -45,11 +45,11 @@
     @apply px-6 md:px-10;
   }
 
-  .header-spacing {
-    @apply py-24 horizontal-spacing;
+  .header-vertical-spacing {
+    @apply py-24;
   }
   
-  .content-spacing {
-    @apply py-24 horizontal-spacing md:py-40;
+  .content-vertical-spacing {
+    @apply py-24 md:py-40;
   }
 }

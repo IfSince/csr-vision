@@ -8,6 +8,7 @@ import { HeaderSectionReversed } from '../components/layout/header-section-rever
 import { Card } from '../components/cards/card.js'
 import { RouteButton } from '../components/button/route-button.js'
 import { DefaultText } from '../components/typography/default-text.js'
+import { H3 } from '../components/typography/h3.js'
 
 const IndexPage = () => {
   return (
@@ -35,7 +36,7 @@ const IndexPage = () => {
 
         <HeaderSection title="our vision" description="We want to elevate you to the next level."/>
 
-        <section className="flex flex-col items-center content-spacing">
+        <section className="flex flex-col items-center horizontal-spacing content-vertical-spacing">
           <div className="flex w-full flex-col items-center justify-between max-w-8xl lg:flex-row">
             <Card title="Design"
                   description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
@@ -47,6 +48,17 @@ const IndexPage = () => {
                   description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
           </div>
           <RouteButton description="See more" route="lorem"/>
+        </section>
+
+        <section className="bg-black content-vertical-spacing">
+          <div className="border-b border-white pb-16 horizontal-spacing">
+            <H3 className="max-w-sm text-white sm:max-w-md xl:max-w-2xl">
+              Working together to create something cool.
+            </H3>
+          </div>
+          <div className="mt-4 text-white horizontal-spacing">
+
+          </div>
         </section>
 
         <HeaderSectionReversed title="who we are" description="We want to elevate you to the next level."/>
