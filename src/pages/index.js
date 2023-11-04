@@ -5,10 +5,20 @@ import 'material-icons/iconfont/material-icons.css'
 import { AnimatedHeader } from '../components/animations/animated-header.js'
 import { HeaderSection } from '../components/layout/header-section.js'
 import { HeaderSectionReversed } from '../components/layout/header-section-reversed.js'
-import { Card } from '../components/cards/card.js'
+import { Attribute } from '../components/cards/attribute.js'
 import { RouteButton } from '../components/button/route-button.js'
 import { DefaultText } from '../components/typography/default-text.js'
 import { H3 } from '../components/typography/h3.js'
+import { Card } from '../components/cards/card.js'
+
+
+/* TODO
+* Cards abrunden
+* Header und Menü
+* Animations
+* Clean-up
+
+*/
 
 const IndexPage = () => {
   return (
@@ -38,14 +48,14 @@ const IndexPage = () => {
 
         <section className="flex flex-col items-center horizontal-spacing content-vertical-spacing">
           <div className="flex w-full flex-col items-center justify-between max-w-8xl lg:flex-row">
-            <Card title="Design"
-                  description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
+            <Attribute title="Design"
+                       description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
 
-            <Card title="Design"
-                  description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
+            <Attribute title="Design"
+                       description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
 
-            <Card title="Design"
-                  description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
+            <Attribute title="Design"
+                       description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
           </div>
           <RouteButton description="See more" route="lorem"/>
         </section>
@@ -56,8 +66,24 @@ const IndexPage = () => {
               Working together to create something cool.
             </H3>
           </div>
-          <div className="mt-4 text-white horizontal-spacing">
 
+          <div className="mt-4 grid w-fit grid-cols-1 grid-rows-2 gap-4 text-white horizontal-spacing sm:grid-cols-2 xl:w-full xl:grid-cols-3 2xl:w-fit">
+            <Card className=""
+                  title="Design"
+                  description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
+
+            <Card className=""
+                  title="Design"
+                  description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
+
+
+            <Card className="xl:col-start-2 xl:col-end-2 xl:row-start-2 xl:row-end-2"
+                  title="Design"
+                  description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
+
+            <Card className="xl:col-start-3 xl:col-end-3 xl:row-start-2 xl:row-end-2"
+                  title="Design"
+                  description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et accusam."/>
           </div>
         </section>
 

@@ -9,7 +9,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Overpass', ...defaultTheme.fontFamily.sans],
         'overpass': ['Overpass', ...defaultTheme.fontFamily.sans],
         'undotted': ['Undotted', 'Overpass', ...defaultTheme.fontFamily.sans],
       },

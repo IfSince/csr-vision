@@ -42,7 +42,7 @@
 
 @layer utilities {
   .horizontal-spacing {
-    @apply px-6 md:px-10;
+    @apply px-6 md:px-14 xl:px-20;
   }
 
   .header-vertical-spacing {
