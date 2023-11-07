@@ -10,6 +10,8 @@ import { RouteButton } from '../components/button/route-button.js'
 import { DefaultText } from '../components/typography/default-text.js'
 import { H3 } from '../components/typography/h3.js'
 import { Card } from '../components/cards/card.js'
+import { TeamMember } from '../components/cards/team-member.js'
+import { HorizontalScrollCarousel } from '../components/layout/horizontal-scroll-carousel.js'
 
 
 /* TODO
@@ -17,6 +19,7 @@ import { Card } from '../components/cards/card.js'
 * Header und Menü
 * Animations
 * Clean-up
+* Responsivität von About Us Scroll Animation
 
 */
 
@@ -87,7 +90,15 @@ const IndexPage = () => {
           </div>
         </section>
 
-        <HeaderSectionReversed title="who we are" description="We want to elevate you to the next level."/>
+        <HeaderSectionReversed title="who we are" description="Keine Ahnung tolles Team dies das lorem Ipsum dolor sit"/>
+
+        <HorizontalScrollCarousel className="pl-[28rem]">
+          <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
+          <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
+          <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
+          <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
+        </HorizontalScrollCarousel>
+        
       </main>
 
       <footer></footer>
