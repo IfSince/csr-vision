@@ -18,6 +18,7 @@
     "autoprefixer": "^10.4.16",
     "framer-motion": "^10.16.4",
     "gatsby": "^5.12.4",
+    "gatsby-adapter-netlify": "^1.0.3",
     "gatsby-plugin-image": "^3.12.2",
     "gatsby-plugin-manifest": "^5.12.3",
     "gatsby-plugin-offline": "^6.12.3",

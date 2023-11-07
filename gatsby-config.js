@@ -15,6 +15,7 @@ module.exports = {
   },
   jsxRuntime: 'automatic',
   plugins: [
+    'gatsby-plugin-netlify',
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
