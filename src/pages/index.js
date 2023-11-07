@@ -20,7 +20,8 @@ import { HorizontalScrollCarousel } from '../components/layout/horizontal-scroll
 * Animations
 * Clean-up
 * Responsivität von About Us Scroll Animation
-
+* Double Border bei About Us
+* Video Bereich verfeinern
 */
 
 const IndexPage = () => {
@@ -92,12 +93,26 @@ const IndexPage = () => {
 
         <HeaderSectionReversed title="who we are" description="Keine Ahnung tolles Team dies das lorem Ipsum dolor sit"/>
 
-        <HorizontalScrollCarousel className="pl-[28rem]">
+        <HorizontalScrollCarousel className="pb-24 pl-[28rem] md:pb-40">
           <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
           <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
           <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
           <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
         </HorizontalScrollCarousel>
+
+        <section className="bg-black content-vertical-spacing">
+          <div className="border-b border-white pb-16 horizontal-spacing">
+            <H3 className="max-w-sm text-white sm:max-w-md xl:max-w-2xl">
+              Working together to create something cool.
+            </H3>
+          </div>
+
+          <div className="mt-4 text-white horizontal-spacing">
+            This is a video placeholder
+          </div>
+        </section>
+
+        <HeaderSection title="interested?" description="Show us your project and we'll find a way."/>
         
       </main>
 
