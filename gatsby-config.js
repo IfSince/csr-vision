@@ -1,7 +1,12 @@
+const adapter = require("gatsby-adapter-netlify")
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+  }),
   siteMetadata: {
     title: 'csr vision',
     description: 'Portfolio Seite für csr vision',
