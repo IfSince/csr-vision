@@ -37,16 +37,22 @@ const IndexPage = () => {
                     transition={ { delay: 0.25, duration: 0.75, ease: [.28, .37, .12, .92] } }></motion.div>
 
         <section className="flex h-screen flex-col items-end">
-          <div className="w-full overflow-hidden rounded-b-2xl bg-green-800 grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-6xl">
-            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/>
-          </div>
+          <motion.div className="w-full overflow-hidden rounded-b-3xl bg-green-800 grow-9999 lg:rounded-b-4xl xl:rounded-b-6xl">
+            <motion.div className="h-full w-full"
+                        initial={ { scale: 1.1 } }
+                        animate={ { scale: 1 } }
+                        transition={ { delay: 0.2, duration: 1.8, ease: [.12, .5, .28, 1] } }
+            >
+              <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/>
+            </motion.div>
+          </motion.div>
           <div className="mt-8 flex w-full flex-col pb-10 horizontal-spacing xl:flex-row xl:justify-between">
             <H1 className="mb-10 flex flex-col md:mb-14 xl:mb-0">
               <div className="h-full w-fit overflow-hidden">
                 <motion.span className="flex flex-col pr-0.5"
                              initial={ { x: '-100%' } }
                              animate={ { x: 0 } }
-                             transition={ { delay: 1, duration: 0.75, ease: [.29, .41, .33, 1] } }>
+                             transition={ { delay: 0.8, duration: 0.8, ease: [.29, .41, .33, 1] } }>
                   <span>design</span>
                   <span>responsibility.</span>
 
@@ -56,9 +62,14 @@ const IndexPage = () => {
 
             <div className="flex flex-col">
               <DefaultText className="mb-14 max-w-sm self-start lg:self-end xl:max-w-md">
-                Maybe so ne kurze Beschreibung von unserer Vision? Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
-                At vero eos et accusam et justo duo dolores et ea rebum.
-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                <motion.span className="block"
+                             initial={ { opacity: 0, y: '15%' } }
+                             animate={ { opacity: 1, y: 0 } }
+                             transition={ { delay: 1, duration: 0.6, ease: [.29, .41, .33, 1] } }>
+                  Maybe so ne kurze Beschreibung von unserer Vision? Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                  At vero eos et accusam et justo duo dolores et ea rebum.
+                  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                </motion.span>
               </DefaultText>
               <IconButton icon="south" className="self-center xl:self-end"/>
             </div>
