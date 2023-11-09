@@ -1,27 +1,28 @@
-import { H1 } from '../components/typography/h1.js'
 import { Seo } from '../components/seo.js'
-import { IconButton } from '../components/button/icon-button.js'
 import 'material-icons/iconfont/material-icons.css'
-import { AnimatedHeader } from '../components/animations/animated-header.js'
 import { HeaderSection } from '../components/layout/header-section.js'
 import { HeaderSectionReversed } from '../components/layout/header-section-reversed.js'
 import { Attribute } from '../components/cards/attribute.js'
 import { RouteButton } from '../components/button/route-button.js'
-import { DefaultText } from '../components/typography/default-text.js'
 import { H3 } from '../components/typography/h3.js'
 import { Card } from '../components/cards/card.js'
 import { TeamMember } from '../components/cards/team-member.js'
 import { HorizontalScrollCarousel } from '../components/layout/horizontal-scroll-carousel.js'
+import { motion } from 'framer-motion'
+import { StaticImage } from 'gatsby-plugin-image'
+import { H1 } from '../components/typography/h1.js'
+import { IconButton } from '../components/button/icon-button.js'
+import { DefaultText } from '../components/typography/default-text.js'
 
 
 /* TODO
 * Cards abrunden
-* Header und Menü
-* Animations
+* Header und Mobile Burger Menü (?)
+* Animations mit Framer Motion ausprobieren
 * Clean-up
-* Responsivität von About Us Scroll Animation
-* Double Border bei About Us
-* Video Bereich verfeinern
+* Finalisieren und Responsivität von About Us Horizontal Scroll Animation
+* Double Border bei About Us fixen
+* Video Bereich ausbauen und Video einbinden
 */
 
 const IndexPage = () => {
@@ -30,20 +31,36 @@ const IndexPage = () => {
       <header></header>
 
       <main className="relative">
+        <motion.div className="fixed top-0 z-50 h-screen w-full bg-black"
+                    initial={ { y: 0 } }
+                    animate={ { y: '-100%', transitionEnd: { display: 'none' } } }
+                    transition={ { delay: 0.25, duration: 0.75, ease: [.28, .37, .12, .92] } }></motion.div>
+
         <section className="flex h-screen flex-col items-end">
-          <div className="w-full bg-green-800 grow-9999 rounded-b-6xl"></div>
+          <div className="w-full overflow-hidden rounded-b-2xl bg-green-800 grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-6xl">
+            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/>
+          </div>
           <div className="mt-8 flex w-full flex-col pb-10 horizontal-spacing xl:flex-row xl:justify-between">
-            <H1 className="mb-14 flex flex-col xl:mb-0">
-              <AnimatedHeader title="design"/>
-              <AnimatedHeader title="responsibility."/>
+            <H1 className="mb-10 flex flex-col md:mb-14 xl:mb-0">
+              <div className="h-full w-fit overflow-hidden">
+                <motion.span className="flex flex-col pr-0.5"
+                             initial={ { x: '-100%' } }
+                             animate={ { x: 0 } }
+                             transition={ { delay: 1, duration: 0.75, ease: [.29, .41, .33, 1] } }>
+                  <span>design</span>
+                  <span>responsibility.</span>
+
+                </motion.span>
+              </div>
             </H1>
+
             <div className="flex flex-col">
-              <DefaultText className="mb-14 max-w-sm self-start md:self-end xl:max-w-md">
+              <DefaultText className="mb-14 max-w-sm self-start lg:self-end xl:max-w-md">
                 Maybe so ne kurze Beschreibung von unserer Vision? Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
                 At vero eos et accusam et justo duo dolores et ea rebum.
                 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
               </DefaultText>
-              <IconButton icon="south" className="self-center md:self-end"/>
+              <IconButton icon="south" className="self-center xl:self-end"/>
             </div>
           </div>
         </section>
@@ -113,7 +130,7 @@ const IndexPage = () => {
         </section>
 
         <HeaderSection title="interested?" description="Show us your project and we'll find a way."/>
-        
+
       </main>
 
       <footer></footer>

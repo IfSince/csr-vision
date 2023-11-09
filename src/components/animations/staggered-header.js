@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export const AnimatedHeader = ({ title }) => {
+export const StaggeredHeader = ({ title }) => {
   const wordAnimation = {
     hidden: {},
     visible: {},
