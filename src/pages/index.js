@@ -31,7 +31,7 @@ const IndexPage = () => {
       <header></header>
 
       <main className="relative">
-        <motion.div className="fixed top-0 z-50 h-screen w-full bg-black"
+        <motion.div className="absolute top-0 z-50 h-screen w-full bg-black"
                     initial={ { y: 0 } }
                     animate={ { y: '-100%', transitionEnd: { display: 'none' } } }
                     transition={ { delay: 0.25, duration: 0.75, ease: [.28, .37, .12, .92] } }></motion.div>
@@ -39,7 +39,7 @@ const IndexPage = () => {
         <section className="flex h-screen flex-col items-end">
           <motion.div className="w-full overflow-hidden rounded-b-3xl bg-green-800 grow-9999 lg:rounded-b-4xl xl:rounded-b-6xl">
             <motion.div className="h-full w-full"
-                        initial={ { scale: 1.1 } }
+                        initial={ { scale: 1.15 } }
                         animate={ { scale: 1 } }
                         transition={ { delay: 0.2, duration: 1.8, ease: [.12, .5, .28, 1] } }
             >
@@ -65,7 +65,7 @@ const IndexPage = () => {
                 <motion.span className="block"
                              initial={ { opacity: 0, y: '15%' } }
                              animate={ { opacity: 1, y: 0 } }
-                             transition={ { delay: 1, duration: 0.6, ease: [.29, .41, .33, 1] } }>
+                             transition={ { delay: 1.1, duration: 0.6, ease: [.29, .41, .33, 1] } }>
                   Maybe so ne kurze Beschreibung von unserer Vision? Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
                   At vero eos et accusam et justo duo dolores et ea rebum.
                   Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,

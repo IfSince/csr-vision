@@ -1,8 +1,15 @@
 import { twMerge } from 'tailwind-merge'
+import { motion } from 'framer-motion'
 
 export const IconButton = ({ icon, className }) =>
-  <button className={
-    twMerge('flex h-16 md:h-20 w-16 md:w-20 md:text-2xl items-center justify-center rounded-full border border-black bg-white text-xl', className)
-  }>
+  <motion.button className={
+    twMerge(
+      'flex h-16 md:h-20 w-16 md:w-20 md:text-2xl items-center justify-center rounded-full border border-black bg-white text-xl select-none touch-none',
+      className,
+    )
+  }
+                 whileHover={ { scale: 1.05 } }
+                 whileTap={ { scale: 0.95 } }
+  >
     <span className="material-icons text-xl md:!text-[28px]">{ icon }</span>
-  </button>
+  </motion.button>
