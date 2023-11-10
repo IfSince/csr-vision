@@ -25,23 +25,27 @@ import { DefaultText } from '../components/typography/default-text.js'
 * Video Bereich ausbauen und Video einbinden
 */
 
+const INITIAL_DELAY = 0
+
 const IndexPage = () => {
   return (
     <>
       <header></header>
 
       <main className="relative">
-        <motion.div className="absolute top-0 z-50 h-screen w-full bg-black"
+        <motion.div className="absolute top-0 z-50 flex h-screen w-full items-center justify-center bg-black text-white max-h-[-webkit-fill-available]"
                     initial={ { y: 0 } }
                     animate={ { y: '-100%', transitionEnd: { display: 'none' } } }
-                    transition={ { delay: 0.25, duration: 0.75, ease: [.28, .37, .12, .92] } }></motion.div>
+                    transition={ { delay: INITIAL_DELAY, duration: 0.75, ease: [.28, .37, .12, .92] } }>
+          Hier wäre noch platz für ne coole Intro Animation, vllt unser Logo was sich animiert zusammensetzt oder sowas.
+        </motion.div>
 
-        <section className="flex h-screen flex-col items-end">
+        <section className="mb-40 flex h-screen flex-col items-end max-h-[-webkit-fill-available]">
           <motion.div className="w-full overflow-hidden rounded-b-3xl bg-green-800 grow-9999 lg:rounded-b-4xl xl:rounded-b-6xl">
             <motion.div className="h-full w-full"
                         initial={ { scale: 1.15 } }
                         animate={ { scale: 1 } }
-                        transition={ { delay: 0.2, duration: 1.8, ease: [.12, .5, .28, 1] } }
+                        transition={ { delay: INITIAL_DELAY - 0.05, duration: 1.8, ease: [.12, .5, .28, 1] } }
             >
               <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/>
             </motion.div>
@@ -52,7 +56,7 @@ const IndexPage = () => {
                 <motion.span className="flex flex-col pr-0.5"
                              initial={ { x: '-100%' } }
                              animate={ { x: 0 } }
-                             transition={ { delay: 0.8, duration: 0.8, ease: [.29, .41, .33, 1] } }>
+                             transition={ { delay: INITIAL_DELAY + 0.55, duration: 0.8, ease: [.29, .41, .33, 1] } }>
                   <span>design</span>
                   <span>responsibility.</span>
 
