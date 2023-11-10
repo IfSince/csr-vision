@@ -9,7 +9,7 @@ export const IconButton = ({ icon, className }) =>
     )
   }
                  whileHover={ { scale: 1.1, backgroundColor: '#1F1F21', color: '#FAF9F6' } }
-                 whileTap={ { scale: 0.95 } }
+                 whileTap={ { scale: 0.95, backgroundColor: '#1F1F21', color: '#FAF9F6' } }
   >
     <span className="material-icons text-xl md:!text-[28px]">{ icon }</span>
   </motion.button>
