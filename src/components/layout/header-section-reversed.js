@@ -1,6 +1,6 @@
 import { H2 } from '../typography/h2.js'
-import { StaggeredHeader } from '../animations/staggered-header.js'
 import { H3 } from '../typography/h3.js'
+import { TextReveal } from '../animations/text-reveal.js'
 
 export const HeaderSectionReversed = ({ title, description }) =>
   <section className="flex flex-col border-t border-b border-black/20 horizontal-spacing header-vertical-spacing">
@@ -8,12 +8,12 @@ export const HeaderSectionReversed = ({ title, description }) =>
       <div className="col-span-2 md:col-span-2 lg:col-span-4"></div>
       <div className="col-span-6 max-w-2xl md:col-span-4 lg:col-span-3">
         <H2 className="self-end">
-          <StaggeredHeader title={ title }/>
+          <TextReveal text={ title }/>
         </H2>
       </div>
     </div>
 
     <H3 className="max-w-sm sm:max-w-md xl:max-w-2xl">
-      { description }
+      <TextReveal text={ description }/>
     </H3>
   </section>

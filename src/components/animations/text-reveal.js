@@ -9,20 +9,20 @@ const variants = {
   },
 }
 
-export const TextReveal = ({ text }) =>
+export const TextReveal = ({ text, delay = 0 }) =>
   <motion.div className="flex flex-wrap"
               initial="hidden"
               whileInView="visible"
               viewport={ { amount: 'all', once: true } }>
     {
-      text.split(' ').map((character, index) =>
+      text.split(' ').map((word, index) =>
         <div style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } }
-             key={ `${ character }${ index }` }
+             key={ `${ word }${ index }` }
         >
           <motion.span className="block"
                        variants={ variants }
-                       transition={ { duration: 0.7, ease: [.29, .41, .33, 1] } }>
-            { character }&nbsp;
+                       transition={ { delay, duration: 0.7, ease: [.29, .41, .33, 1] } }>
+            { word }&nbsp;
           </motion.span>
         </div>,
       )
