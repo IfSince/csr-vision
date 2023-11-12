@@ -85,7 +85,7 @@ const IndexPage = () =>
 
       <ContentSection className="flex w-full flex-col items-center">
         <Attributes attributes={ ATTRIBUTE_CONFIG }/>
-        <RouteButton description="See more" route="lorem"/>
+        <RouteButton description="See more" route="see-more"/>
       </ContentSection>
 
       <ContentSection className="grid w-fit grid-cols-1 grid-rows-2 gap-4 text-white sm:grid-cols-2 xl:w-full xl:grid-cols-3 2xl:w-fit"

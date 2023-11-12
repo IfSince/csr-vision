@@ -5,6 +5,7 @@ export const ScrollButton = ({ className }) =>
   <ButtonTemplate className={
     twMerge('flex h-16 md:h-20 w-16 md:w-20 md:text-2xl items-center justify-center rounded-full text-xl fill-black', className)
   }>
+    <span className="sr-only">Scroll Down</span>
     <svg className="h-6 w-6 md:h-7 md:w-7"
          xmlns="http://www.w3.org/2000/svg"
          viewBox="0 -960 960 960">
