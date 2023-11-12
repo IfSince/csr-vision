@@ -44,12 +44,4 @@
   .horizontal-spacing {
     @apply px-6 md:px-12 xl:px-14;
   }
-
-  .header-vertical-spacing {
-    @apply py-24;
-  }
-  
-  .content-vertical-spacing {
-    @apply py-24 md:py-40;
-  }
 }

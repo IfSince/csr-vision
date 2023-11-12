@@ -12,8 +12,8 @@ module.exports = {
         'overpass': ['Overpass', ...defaultTheme.fontFamily.sans],
         'undotted': ['Undotted', 'Overpass', ...defaultTheme.fontFamily.sans],
       },
-      theme: {
-        'xs': '350px',
+      screens: {
+        'xs': '400px',
       },
       borderRadius: {
         '4xl': '2rem', // 32px
