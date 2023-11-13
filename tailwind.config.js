@@ -50,7 +50,7 @@ module.exports = {
       'h1': 'clamp(3.375rem, 10vw, 7.594rem)',
       'h2': 'clamp(3.375rem, 10vw, 7.594rem)',
       'h3': 'clamp(1.5rem, 4.5vw, 3.375rem)',
-      'h4': 'clamp(1.5rem, 5vw, 2.25rem)',
+      'h4': 'clamp(1.75rem, 5vw, 2.25rem)',
     },
   },
   plugins: [],
