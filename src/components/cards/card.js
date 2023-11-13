@@ -36,7 +36,6 @@ export const Card = ({ title, description, className }) => {
 
       <DefaultText className="mb-4 block font-medium text-green-500 lg:mb-6 xl:mb-8">Header Random</DefaultText>
 
-
       <DefaultText>{ description }</DefaultText>
     </motion.article>
   )
