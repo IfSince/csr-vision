@@ -55,7 +55,7 @@ const IndexPage = () =>
                  initial={ { scale: 1.15 } }
                  animate={ { scale: 1 } }
                  transition={ { delay: INITIAL_DELAY - 0.05, duration: 1.8, ease: [.12, .5, .28, 1] } }>
-            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/>
+            {/* <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/> */}
           </m.div>
         </div>
 
