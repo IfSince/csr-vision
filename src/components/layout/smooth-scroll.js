@@ -1,5 +1,5 @@
 import { useCallback, useLayoutEffect, useRef, useState } from 'react'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import { m, useScroll, useSpring, useTransform } from 'framer-motion'
 
 export const SmoothScroll = ({ children }) => {
 // scroll container
@@ -27,13 +27,13 @@ export const SmoothScroll = ({ children }) => {
 
   return (
     <>
-      <motion.div
+      <m.div
         ref={ scrollRef }
         style={ { y: spring } } // translateY of scroll container using negative scroll value
         className="fixed top-0 left-0 w-full overflow-hidden will-change-transform"
       >
         { children }
-      </motion.div>
+      </m.div>
       {/* blank div that has a dynamic height based on the content's inherent height */ }
       {/* this is neccessary to allow the scroll container to scroll... */ }
       {/* ... using the browser's native scroll bar */ }

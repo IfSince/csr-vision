@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { m, useScroll, useTransform } from 'framer-motion'
 
 export const HorizontalScrollCarousel = ({ children, className }) => {
   const targetRef = useRef(null)
@@ -10,9 +10,9 @@ export const HorizontalScrollCarousel = ({ children, className }) => {
   return (
     <section ref={ targetRef } className="relative bg-neutral-900 h-[150vh]">
       <div className="sticky top-16 mb-16 flex flex-col overflow-hidden border-t border-black pt-4">
-        <motion.div style={ { x } } className={ `flex gap-4 ${ className }` }>
+        <m.div style={ { x } } className={ `flex gap-4 ${ className }` }>
           { children }
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )
