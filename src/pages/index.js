@@ -105,12 +105,12 @@ const IndexPage = () =>
 
       <HeaderSection title="who we are" description="Keine Ahnung tolles Team dies das lorem Ipsum dolor sit" variant="reversed"/>
 
-      <HorizontalScrollCarousel className="pb-24 pl-[28rem] md:pb-40">
-        <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
-        <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
-        <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
-        <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/>
-      </HorizontalScrollCarousel>
+      {/* <HorizontalScrollCarousel className="pb-24 pl-[28rem] md:pb-40"> */}
+      {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */}
+      {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */}
+      {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */}
+      {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */}
+      {/* </HorizontalScrollCarousel> */}
 
       <ContentSection title="Working together to create something cool." variant="dark">
         This is a video placeholder

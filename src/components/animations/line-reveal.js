@@ -1,5 +1,4 @@
 import { m } from 'framer-motion'
-import { DEFAULT_REVEAL_ANIMATION } from './config.js'
 
 const variants = {
   hidden: { y: '120%' },
@@ -15,8 +14,7 @@ export const LineReveal = ({ text }) =>
       text?.split(' ').map((word, index) =>
         <div style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } } key={ index }>
           <m.span className="block"
-                       variants={ variants }
-                       transition={ { ...DEFAULT_REVEAL_ANIMATION } }>
+                       variants={ variants }>
             { word }&nbsp;
           </m.span>
         </div>,
