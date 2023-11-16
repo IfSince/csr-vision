@@ -7,12 +7,13 @@ const btnVariants = {
   tap: { scale: 0.95, backgroundColor: theme.colors.black, color: theme.colors.white, fill: theme.colors.white },
 }
 
-export const ButtonTemplate = ({ className, children }) => {
+export const ButtonTemplate = ({ className, children, onClick = () => void 0 }) => {
   return (
     <m.button className={ twMerge('select-none touch-none border border-black rounded-full bg-white', className) }
-                   whileHover="hover"
-                   whileTap="tap"
-                   variants={ btnVariants }>
+              whileHover="hover"
+              whileTap="tap"
+              variants={ btnVariants }
+              onClick={ onClick }>
       { children }
     </m.button>
   )

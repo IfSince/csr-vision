@@ -1,7 +1,7 @@
 import { H2 } from '../typography/h2.js'
 import { H3 } from '../typography/h3.js'
 
-export const HeaderSection = ({ title, description, variant = 'default' }) => {
+export const HeaderSection = ({ id = '', title, description, variant = 'default' }) => {
   const classes = 'mb-36 lg:mb-24'
 
   const variants = {
@@ -16,7 +16,7 @@ export const HeaderSection = ({ title, description, variant = 'default' }) => {
   }
 
   return (
-    <section className="flex flex-col border-t border-b border-black/20 py-24 horizontal-spacing">
+    <section id={ id } className="flex flex-col border-t border-b border-black/20 py-24 horizontal-spacing">
       { variants['header'][variant] }
       { variants['subText'][variant] }
     </section>

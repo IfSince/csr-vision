@@ -7,18 +7,25 @@ import { ScrollButton } from '../components/button/scroll-button.js'
 import { DefaultText } from '../components/typography/default-text.js'
 import { Attributes } from '../components/layout/attributes.js'
 import { ContentSection } from '../components/layout/content-section.js'
-import { HorizontalWrapper } from '../components/layout/horizontal-wrapper.js'
 import { Card } from '../components/cards/card.js'
+import { Header } from '../components/header/header.js'
 
 
 /* TODO
-* Header und Mobile Burger Menü (?)
+* Header und Mobile Burger Menü animieren mit Motion
 * Finalisieren und Responsivität von About Us Horizontal Scroll Animation
 * Double Border bei About Us fixen
 * Video Bereich ausbauen und Video einbinden
 */
 
 const INITIAL_DELAY = 0
+
+const MENU_CONFIG = [
+  { text: 'home', link: '/', mobileOnly: true },
+  { text: 'our vision', link: '/#our-vision' },
+  { text: 'about us', link: '/#about-us' },
+  { text: 'contact', link: '/#contact' },
+]
 
 const ATTRIBUTE_CONFIG = [
   {
@@ -37,7 +44,7 @@ const ATTRIBUTE_CONFIG = [
 
 const IndexPage = () =>
   <LazyMotion features={ domAnimation } strict>
-    <header></header>
+    <Header items={ MENU_CONFIG }/>
 
     <main className="relative">
       <m.div className="absolute top-0 z-50 flex h-screen w-full items-center justify-center bg-black text-white"
@@ -45,8 +52,8 @@ const IndexPage = () =>
              animate={ { y: '-100%' } }
              transition={ { delay: INITIAL_DELAY, duration: 0.75, ease: [.28, .37, .12, .92] } }/>
 
-      <section className="mb-40 flex h-screen flex-col items-end">
-        <div className="w-full overflow-hidden rounded-b-3xl bg-green-800 grow-9999 lg:rounded-b-4xl xl:rounded-b-6xl">
+      <section className="mb-40 flex h-screen flex-col items-end pt-20 pb-10 horizontal-spacing">
+        <div className="w-full overflow-hidden rounded-2xl bg-green-800 grow-9999 md:rounded-3xl lg:rounded-4xl xl:rounded-5xl">
           <m.div className="h-full w-full"
                  initial={ { scale: 1.15 } }
                  animate={ { scale: 1 } }
@@ -55,25 +62,31 @@ const IndexPage = () =>
           </m.div>
         </div>
 
-        <HorizontalWrapper className="mt-8 flex w-full flex-col pb-10 xl:flex-row xl:justify-between">
-          <H1 className="mb-10 flex flex-col md:mb-14 xl:mb-0">
+        <div className="mt-6 flex w-full flex-col gap-x-24 pb-10 lg:flex-row lg:justify-between xl:pb-0">
+          <H1 className="flex flex-col mb-[0.4em] lg:mb-0">
             <span>design</span>
             <span>responsibility</span>
           </H1>
 
           <div className="flex flex-col">
-            <DefaultText className="mb-14 max-w-sm self-start font-medium lg:self-end xl:max-w-md">
+            <DefaultText className="mt-1 max-w-xs self-start sm:max-w-sm md:self-end xl:max-w-md xl:font-medium">
               CSR.vision hilft Unternehmen dabei, CSR als Chance zu begreifen.
-              Durch Komplexitätsreduktion, Kuratieren und crossmediale Aufbereitung verwandeln wir CSR Berichte, die sonst nur von Analysten und Stakeholdern
-              gelesen werden, in echtes Storytelling, das auch ihre Community und Kunden begeistern wird.
+              Durch Reduzierung der Komplexität, Kuratieren und crossmediale Aufbereitung verwandeln wir CSR Berichte, die sonst nur von Analysten und
+              Stakeholdern gelesen werden, in echtes Storytelling, das auch ihre Community und Kunden begeistern wird.
             </DefaultText>
 
-            <ScrollButton className="self-center xl:self-end"/>
+            <ScrollButton className="mt-auto hidden self-end xl:flex"/>
           </div>
-        </HorizontalWrapper>
+        </div>
+
+        <div className="flex w-full justify-center">
+          <ScrollButton className="mt-auto xl:hidden"/>
+        </div>
       </section>
 
-      <HeaderSection title="our csr vision" description="CSR als Chance begreifen und in die DNA ihrer Kommunikation integrieren"/>
+      <HeaderSection id="our-vision"
+                     title="our csr vision"
+                     description="CSR als Chance begreifen und in die DNA ihrer Kommunikation integrieren"/>
 
       <ContentSection className="flex w-full flex-col items-center">
         <Attributes attributes={ ATTRIBUTE_CONFIG }/>
@@ -99,7 +112,9 @@ const IndexPage = () =>
               description="A lack of IT-experts who are capable of coding affects many companies. With our techology you can replace coding with modeling, which einables flexiblity and efficiency."/>
       </ContentSection>
 
-      <HeaderSection title="who we are" description="a hard-designing team of professionals spanning generations x to z" variant="reversed"/>
+      <HeaderSection id="about-us"
+                     title="who we are"
+                     description="a hard-designing team of professionals spanning generations x to z" variant="reversed"/>
 
       {/* <HorizontalScrollCarousel className="pb-24 pl-[28rem] md:pb-40"> */ }
       {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */ }
@@ -112,7 +127,9 @@ const IndexPage = () =>
         This is a video placeholder
       </ContentSection>
 
-      <HeaderSection title="interested?" description="Show us your project and we'll find a way."/>
+      <HeaderSection id="contact"
+                     title="interested?"
+                     description="Show us your project and we'll find a way."/>
     </main>
 
     <footer></footer>

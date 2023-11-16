@@ -1,5 +1,3 @@
-
-
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -33,7 +31,7 @@ module.exports = {
         theme_color: '#417C5E',
         display: 'standalone',
         icon: 'src/images/logo-variants/icon.svg',
-      }
+      },
     },
     'gatsby-plugin-offline',
     {
@@ -43,6 +41,14 @@ module.exports = {
         'path': './src/images/',
       },
       __key: 'images',
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images\/logo-variants/,
+        },
+      },
     },
   ],
 }
