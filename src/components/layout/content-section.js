@@ -21,12 +21,11 @@ export const ContentSection = ({ title = null, variant = 'default', contentWrapp
       {
         title && (
           <HorizontalWrapper className={ `border-b ${ borderClasses[variant] } pb-16 mb-4` }>
-            <H3>{ title }</H3>
+            <H3 className="xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">{ title }</H3>
           </HorizontalWrapper>
         )
       }
       { content }
     </section>
   )
-
 }

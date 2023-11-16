@@ -1,13 +1,8 @@
 import { Attribute } from '../cards/attribute.js'
-import { m } from 'framer-motion'
 
 export const Attributes = ({ attributes }) =>
-  <m.div className="flex w-full flex-col items-center justify-between max-w-8xl lg:flex-row"
-              initial="hidden"
-              whileInView="visible"
-              transition={ { staggerChildren: 0.15 } }
-              viewport={ { once: true, margin: '0px 0px -100px 0px' } }>
+  <div className="flex w-full flex-col items-center justify-between gap-4 max-w-8xl lg:flex-row lg:items-start">
     {
-      attributes.map(attribute => <Attribute { ...attribute } key={ attribute.title }/>)
+      attributes.map((attribute, index) => <Attribute { ...attribute } delay={ .15 * index } key={ attribute.title }/>)
     }
-  </m.div>
+  </div>

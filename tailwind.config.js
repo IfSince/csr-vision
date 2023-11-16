@@ -24,6 +24,7 @@ module.exports = {
       },
       maxWidth: {
         'xxs': '16rem', // 256px
+        'custom': '18rem', // 288px
         '8xl': '90rem' // 1440px
       },
       flexGrow: {
