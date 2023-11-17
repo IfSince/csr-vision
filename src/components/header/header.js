@@ -1,14 +1,14 @@
 import { HorizontalWrapper } from '../layout/horizontal-wrapper.js'
 import { MenuEntry } from './menu/menu-entry.js'
 import { ButtonTemplate } from '../button/button-template.js'
-import Logo from '../../images/logo-variants/logo.svg'
+import logo from '../../images/logo-variants/logo.svg'
 
 export const Header = ({ items }) => {
   return (
     <header className="fixed z-40 h-20 w-full pr-1 sm:pr-2 sm:pl-1 md:pr-4 md:pl-2">
       <HorizontalWrapper className="flex h-full w-full items-center justify-between">
         <a href="/" className="flex h-full w-28 items-center justify-center md:w-30">
-          <img className="h-auto w-full object-fill" src={ Logo } alt="Logo"/>
+          <img className="h-auto w-full object-fill" src={ logo } alt="Logo"/>
         </a>
 
         <nav className="h-full">

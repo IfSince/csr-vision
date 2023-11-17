@@ -9,12 +9,12 @@ import { Attributes } from '../components/layout/attributes.js'
 import { ContentSection } from '../components/layout/content-section.js'
 import { Card } from '../components/cards/card.js'
 import { Header } from '../components/header/header.js'
+import { TeamMember } from '../components/cards/team-member.js'
+import { ImageHover } from '../components/animations/image-hover.js'
 
 
 /* TODO
 * Header und Mobile Burger Menü animieren mit Motion
-* Finalisieren und Responsivität von About Us Horizontal Scroll Animation
-* Double Border bei About Us fixen
 * Video Bereich ausbauen und Video einbinden
 */
 
@@ -52,13 +52,15 @@ const IndexPage = () =>
              animate={ { y: '-100%' } }
              transition={ { delay: INITIAL_DELAY, duration: 0.75, ease: [.28, .37, .12, .92] } }/>
 
-      <section className="mb-40 flex h-screen flex-col items-end pt-20 pb-10 horizontal-spacing">
+      <section className="mb-16 flex h-screen flex-col items-end pt-20 pb-10 horizontal-spacing md:mb-24">
         <div className="w-full overflow-hidden rounded-2xl bg-green-800 grow-9999 md:rounded-3xl lg:rounded-4xl xl:rounded-5xl">
           <m.div className="h-full w-full"
                  initial={ { scale: 1.15 } }
                  animate={ { scale: 1 } }
                  transition={ { delay: INITIAL_DELAY - 0.05, duration: 1.8, ease: [.12, .5, .28, 1] } }>
-            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/>
+            <ImageHover>
+              <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/>
+            </ImageHover>
           </m.div>
         </div>
 
@@ -92,7 +94,7 @@ const IndexPage = () =>
         <Attributes attributes={ ATTRIBUTE_CONFIG }/>
       </ContentSection>
 
-      <ContentSection className="grid w-fit grid-cols-1 grid-rows-2 gap-4 text-white sm:grid-cols-2 xl:w-full xl:grid-cols-3 2xl:w-fit"
+      <ContentSection className="grid w-fit grid-cols-1 grid-rows-2 gap-4 sm:grid-cols-2 xl:w-full xl:grid-cols-3 2xl:w-fit"
                       title="Working together to design your cooperate social responsibility"
                       variant="dark">
         <Card
@@ -116,12 +118,40 @@ const IndexPage = () =>
                      title="who we are"
                      description="a hard-designing team of professionals spanning generations x to z" variant="reversed"/>
 
-      {/* <HorizontalScrollCarousel className="pb-24 pl-[28rem] md:pb-40"> */ }
-      {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */ }
-      {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */ }
-      {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */ }
-      {/*   <TeamMember role="Web Dev - UI/UX" name="Leon Laade"/> */ }
-      {/* </HorizontalScrollCarousel> */ }
+      <ContentSection className="flex justify-end" subSection={ true }>
+        <div className="grid w-full grid-cols-1 gap-x-4 gap-y-8 sm:w-fit sm:grid-cols-2 lg:grid-cols-3">
+          <TeamMember className="col-start-1 col-end-1"
+                      role="Project Lead"
+                      name="Lukas Ruszkowski">
+            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Lukas Ruszkowski"/>
+          </TeamMember>
+
+          <TeamMember className="lg:col-start-2 lg:col-end-2"
+                      role="Co. Lead"
+                      name="Kai Hitzer">
+            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Kai Hitzer"/>
+          </TeamMember>
+
+          <TeamMember className="lg:col-start-3 lg:col-end-3"
+                      role="Member"
+                      name="Leon Laade">
+            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Leon Laade"/>
+          </TeamMember>
+
+          <TeamMember className="lg:col-start-2 lg:col-end-2 lg:row-start-2 lg:row-end-2"
+                      role="Member"
+                      name="Ben Schmidt">
+            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Ben Schmidt"/>
+          </TeamMember>
+
+          <TeamMember className="lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-2"
+                      role="Member"
+                      name="Jan Mueller">
+            <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Jan Mueller"/>
+          </TeamMember>
+        </div>
+      </ContentSection>
+
 
       <ContentSection title="Working together to create something cool." variant="dark">
         This is a video placeholder
@@ -131,7 +161,6 @@ const IndexPage = () =>
                      title="interested?"
                      description="Show us your project and we'll find a way."/>
     </main>
-
     <footer></footer>
   </LazyMotion>
 

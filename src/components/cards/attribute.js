@@ -4,7 +4,7 @@ import { m } from 'framer-motion'
 import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../animations/config.js'
 
 export const Attribute = ({ title, description, delay = 0 }) =>
-  <m.article className="mb-20 flex flex-col items-center text-center max-w-custom sm:max-w-sm lg:mb-20 lg:max-w-xs xl:max-w-sm"
+  <m.article className="mb-20 flex flex-col items-center text-center max-w-custom sm:max-w-sm lg:mb-0 lg:max-w-xs xl:max-w-sm"
              variants={ CONTENT_REVEAL_VARIANTS }
              initial="hidden"
              whileInView="visible"

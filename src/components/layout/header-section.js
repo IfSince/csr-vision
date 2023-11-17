@@ -2,7 +2,7 @@ import { H2 } from '../typography/h2.js'
 import { H3 } from '../typography/h3.js'
 
 export const HeaderSection = ({ id = '', title, description, variant = 'default' }) => {
-  const classes = 'mb-36 lg:mb-24'
+  const classes = 'mb-20 sm:mb-20 md:mb-20 lg:mb-32'
 
   const variants = {
     header: {
@@ -11,12 +11,12 @@ export const HeaderSection = ({ id = '', title, description, variant = 'default'
     },
     subText: {
       default: <ColIndented><H3>{ description }</H3></ColIndented>,
-      reversed: <H3 className="xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">{ description }</H3>,
+      reversed: <H3 className="max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl">{ description }</H3>,
     },
   }
 
   return (
-    <section id={ id } className="flex flex-col border-t border-b border-black/20 py-24 horizontal-spacing">
+    <section id={ id } className="flex flex-col border-t border-b border-black/20 py-20 horizontal-spacing md:py-24">
       { variants['header'][variant] }
       { variants['subText'][variant] }
     </section>

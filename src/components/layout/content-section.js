@@ -1,7 +1,7 @@
 import { H3 } from '../typography/h3.js'
 import { HorizontalWrapper } from './horizontal-wrapper.js'
 
-export const ContentSection = ({ title = null, variant = 'default', contentWrapped = true, className = '', children }) => {
+export const ContentSection = ({ title = null, variant = 'default', subSection = false, contentWrapped = true, className = '', children }) => {
   const variantClasses = {
     default: '',
     dark: 'bg-black text-white',
@@ -17,7 +17,7 @@ export const ContentSection = ({ title = null, variant = 'default', contentWrapp
     : <>{ children }</>
 
   return (
-    <section className={ `py-24 md:py-40 ${ variantClasses[variant] }` }>
+    <section className={ `${subSection ? 'pt-4 pb-24 md:pb-40' : 'py-24 md:py-40' } ${ variantClasses[variant] }` }>
       {
         title && (
           <HorizontalWrapper className={ `border-b ${ borderClasses[variant] } pb-16 mb-4` }>
