@@ -1,8 +1,20 @@
 import { H4 } from '../typography/h4.js'
+import { m } from 'framer-motion'
+import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../animations/config.js'
+import { ImageHover } from '../animations/image-hover.js'
 
-export const TeamMember = ({ role, name }) =>
-  <article className="max-w-md min-w-[18rem] md:min-w-[28rem]">
-    <div className="rounded-sm bg-black p-8 mb-2.5 aspect-[1/1.3] sm:mb-5 md:p-12"></div>
-    <span className="pl-1 font-medium tracking-tight sm:text-lg">{ role }</span>
-    <H4 className="mt-1 pl-1 sm:mt-2">{ name }</H4>
-  </article>
+export const TeamMember = ({ role, name, children, className = '' }) =>
+  <m.article className={ `w-full max-w-[26rem] ${ className }` }
+             variants={ CONTENT_REVEAL_VARIANTS }
+             initial="hidden"
+             whileInView="visible"
+             transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease } }
+             viewport={ { once: true, margin: '0px 0px -200px 0px' } }>
+    <div className="w-full overflow-hidden rounded-sm bg-black aspect-[1/1.25]">
+      <ImageHover>
+        { children }
+      </ImageHover>
+    </div>
+    <span className="mt-2 block font-medium tracking-tight text-green-800">{ role }</span>
+    <H4 className="mt-1 sm:mt-2">{ name }</H4>
+  </m.article>
