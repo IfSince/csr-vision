@@ -1,14 +1,16 @@
+const { theme } = require('./tailwind.config.js')
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
   siteMetadata: {
     title: 'csr vision',
-    description: 'Portfolio Seite für csr vision',
+    description: 'csr vision - design responsibility',
     author: 'Leon Laade',
     siteUrl: 'https://csr.vision/',
     image: 'src/images/logo-variants/icon.svg',
-    keywords: 'csr, nachhaltigkeit',
+    keywords: 'Design, Nachhaltigkeit, Komplexitätsreduktion',
   },
   flags: {
     DEV_SSR: true,
@@ -27,8 +29,8 @@ module.exports = {
         name: 'csr vision',
         short_name: 'csr vision',
         start_url: '/',
-        background_color: '#FAF9F6',
-        theme_color: '#417C5E',
+        background_color: theme.colors.white,
+        theme_color: theme.colors.green['800'],
         display: 'standalone',
         icon: 'src/images/logo-variants/icon.svg',
       },

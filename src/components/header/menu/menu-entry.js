@@ -1,4 +1,6 @@
-export const MenuEntry = ({ text, link, mobileOnly = false }) =>
-  <li className={ `p-0.5 hover:underline underline-offset-4 ${ mobileOnly && 'md:hidden' }` }>
-    <a href={ link }>{ text }</a>
+export const MenuEntry = ({ text, onClick = () => void 0 }) =>
+  <li className="underline-offset-4 p-0.5 hover:underline">
+    <button className="inline" onClick={ onClick }>
+      { text }
+    </button>
   </li>

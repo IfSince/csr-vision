@@ -1,15 +1,9 @@
 import { ButtonTemplate } from './button-template.js'
+import { ArrowDownIcon } from '../icons/arrow-down-icon.js'
 
-export const ScrollButton = ({ className }) =>
-  <a className={ className } href="/#our-vision">
-    <ButtonTemplate className="flex h-16 w-16 items-center justify-center rounded-full fill-black text-xl md:h-20 md:w-20 md:text-2xl"
-                    onClick={ () => console.log('test') }>
-      <span className="sr-only">Scroll Down</span>
-      <svg className="h-6 w-6 md:h-7 md:w-7"
-           xmlns="http://www.w3.org/2000/svg"
-           viewBox="0 -960 960 960">
-        <path
-          d="M480-97q-8 0-15-2.5t-13-8.5L228-332q-11-11-11-28t11-28q12-12 28.5-11.5T284-388l156 155v-607q0-17 11.5-28.5T480-880q17 0 28.5 11.5T520-840v607l155-155q12-12 28.5-12t28.5 12q11 12 11 28.5T732-332L508-108q-6 6-13 8.5T480-97Z"/>
-      </svg>
-    </ButtonTemplate>
-  </a>
+export const ScrollButton = ({ className, onClick }) =>
+  <ButtonTemplate className={ `flex h-16 w-16 items-center justify-center rounded-full fill-black text-xl md:h-20 md:w-20 md:text-2xl ${ className }` }
+                  onClick={ onClick }>
+    <span className="sr-only">Scroll Down</span>
+    <ArrowDownIcon className="h-6 w-6 md:h-7 md:w-7"/>
+  </ButtonTemplate>

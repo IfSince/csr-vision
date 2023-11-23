@@ -15,21 +15,22 @@ export const Card = ({ title, description, className }) => {
   }
 
   return (
-    <m.article className={ `relative bg-green-800/50 rounded-sm px-8 pt-8 pb-10 md:px-12 md:pt-12 md:pb-14 md:pb-20 max-w-[30rem] group ${ className }` }
+    <m.article className={ `relative bg-green-800 rounded-sm px-8 pt-8 pb-10 md:px-12 md:pt-12 md:pb-14 md:pb-20 max-w-[30rem] group ${ className }` }
                variants={ CONTENT_REVEAL_VARIANTS }
                initial="hidden"
                whileInView="visible"
                transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease } }
                viewport={ { once: true, margin: '0px 0px -200px 0px' } }
                onMouseMove={ handleMouseMove }>
-      <m.div className="pointer-events-none absolute inset-0 z-10 opacity-0 transition duration-300 group-hover:opacity-100"
-                  style={ { background: useMotionTemplate`radial-gradient(circle at ${ mouseX }px ${ mouseY }px, rgba(65,124,94,0.35), transparent 80%)` } }></m.div>
+      <m.div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+             style={ { background: useMotionTemplate`radial-gradient(circle at ${ mouseX }px ${ mouseY }px, rgba(65,124,94,0.5), transparent 80%)` } }></m.div>
 
-      <div className="h-28 w-40 rounded-md bg-white"></div>
-      <H4 className="mt-8 h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0 md:mt-10">{ title }</H4>
-
-      <DefaultText className="mb-4 block font-medium text-green-500 lg:mb-6 xl:mb-8">Header Random</DefaultText>
-      <DefaultText>{ description }</DefaultText>
+      <div className="relative">
+        <div className="h-28 w-40 rounded-md bg-white"></div>
+        <H4 className="mt-8 h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0 md:mt-10">{ title }</H4>
+        <DefaultText className="mb-4 block font-medium text-black lg:mb-6 xl:mb-8">Header Random</DefaultText>
+        <DefaultText>{ description }</DefaultText>
+      </div>
     </m.article>
   )
 }

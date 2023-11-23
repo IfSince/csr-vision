@@ -9,7 +9,7 @@ const btnVariants = {
 
 export const ButtonTemplate = ({ className, children, onClick = () => void 0 }) => {
   return (
-    <m.button className={ twMerge('select-none touch-none border border-black rounded-full bg-white', className) }
+    <m.button className={ twMerge('w-fit select-none touch-none border border-black rounded-full bg-white', className) }
               whileHover="hover"
               whileTap="tap"
               variants={ btnVariants }
