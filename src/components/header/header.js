@@ -16,8 +16,8 @@ export const Header = ({ items }) => {
   const [mobileOpen, toggleMobileOpen] = useCycle(false, true)
   const [hidden, setHidden] = useState(false)
   const { scrollY } = useScroll()
-  
-  const renderMenuEntries = (entry) => <MenuEntry { ...entry } key={ entry.text }/>
+
+  const renderMenuEntries = entry => <MenuEntry { ...entry } key={ entry.text }/>
 
   useEffect(() => {
     const update = () => {
@@ -54,7 +54,12 @@ export const Header = ({ items }) => {
                       isOpen={ mobileOpen }
                       toggleOpen={ toggleMobileOpen }>
             {
-              items.map(renderMenuEntries)
+              items.map(entry => <MenuEntry text={ entry.text }
+                                            onClick={ () => {
+                                              toggleMobileOpen()
+                                              entry.onClick()
+                                            } }
+                                            key={ entry.text }/>)
             }
           </MobileMenu>
         </nav>

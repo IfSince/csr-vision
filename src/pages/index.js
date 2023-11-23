@@ -87,12 +87,12 @@ const IndexPage = () => {
                   Stakeholdern gelesen werden, in echtes Storytelling, das auch ihre Community und Kunden begeistern wird.
                 </DefaultText>
 
-                <ScrollButton className="mt-auto hidden self-end xl:flex" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY) }/>
+                <ScrollButton className="mt-auto hidden self-end xl:flex" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY, 'smooth') }/>
               </div>
             </div>
 
             <div className="flex w-full justify-center">
-              <ScrollButton className="mt-auto xl:hidden" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY) }/>
+              <ScrollButton className="mt-auto xl:hidden" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY, 'smooth') }/>
             </div>
           </section>
 
