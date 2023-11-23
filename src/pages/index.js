@@ -56,10 +56,6 @@ const IndexPage = () => {
 
   return (
     <LazyMotion features={ domAnimation } strict>
-      <m.div className="absolute top-0 flex h-screen w-full items-center justify-center bg-black text-white z-[9999]"
-             initial={ { y: 0 } }
-             animate={ { y: '-100%' } }
-             transition={ { delay: INITIAL_DELAY, duration: 0.75, ease: [.28, .37, .12, .92] } }/>
       <Header items={ navItems }/>
 
       <SmoothScroll>
@@ -70,7 +66,7 @@ const IndexPage = () => {
                      initial={ { scale: 1.15 } }
                      animate={ { scale: 1 } }
                      transition={ { delay: INITIAL_DELAY - 0.05, duration: 1.8, ease: [.12, .5, .28, 1] } }>
-                <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods"/>
+                <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods" loading="eager"/>
               </m.div>
             </div>
 
