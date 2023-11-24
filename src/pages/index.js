@@ -14,12 +14,13 @@ import { SmoothScroll } from '../components/layout/smooth-scroll.js'
 import { ButtonTemplate } from '../components/button/button-template.js'
 import { useRef } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
+import { Footer } from '../components/footer/footer.js'
 
 
 /* TODO
+* Footer
 * Mobile Menu schöner machen
 * Video Bereich ausbauen/Video einbinden
-* Footer
 * Progress Bars für die Sections einbauen (maybe in Nav)
 */
 
@@ -172,7 +173,7 @@ const IndexPage = () => {
                            subText="Show us your project and we'll find a way."
                            subElement={
                              <ButtonTemplate>
-                               <a className="block w-56 rounded-full font-medium tracking-tight z-1 py-2.5 md:w-64 md:py-3 lg:w-80"
+                               <a className="block w-56 rounded-full font-medium tracking-tight z-1 py-2.5 md:w-64 md:py-3 lg:w-80 xl:w-[24rem]"
                                   href="mailto:abc@example.com">
                                  Contact us
                                </a>
@@ -180,9 +181,10 @@ const IndexPage = () => {
                            }/>
           </div>
         </main>
+
+        <Footer items={ navItems }/>
       </SmoothScroll>
 
-      <footer></footer>
     </LazyMotion>
   )
 }

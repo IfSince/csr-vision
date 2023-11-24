@@ -39,7 +39,7 @@ export const Header = ({ items }) => {
 
       <HorizontalWrapper className="flex h-full w-full items-center justify-between">
         <a href="/" className="flex h-full w-28 items-center justify-center md:w-32">
-          <img className="h-auto w-full object-fill" src={ logo } alt="Logo"/>
+          <img className="h-auto w-full" src={ logo } alt="Logo"/>
         </a>
 
         <nav className="h-full">
