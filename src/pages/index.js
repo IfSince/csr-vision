@@ -16,12 +16,13 @@ import { useRef } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
 import { Footer } from '../components/footer/footer.js'
 
+import DummyVideo from '../videos/video.mp4'
+
 
 /* TODO
-* Footer
-* Mobile Menu schöner machen
 * Video Bereich ausbauen/Video einbinden
-* Progress Bars für die Sections einbauen (maybe in Nav)
+* Hover für Links besser
+* Header schöner machen
 */
 
 const INITIAL_DELAY = 0
@@ -164,7 +165,9 @@ const IndexPage = () => {
 
 
             <ContentSection title="Working together to create something cool." variant="dark">
-              This is a video placeholder
+              <video className="w-full" controls={ true }>
+                <source src={ DummyVideo } type="video/mp4"/>
+              </video>
             </ContentSection>
           </div>
 
