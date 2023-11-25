@@ -59,7 +59,7 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
         <MenuIcon className="h-7 w-7"/>
       </button>
 
-      <m.div className={ `absolute -z-10 top-0 left-0 flex h-screen w-screen flex-col items-center justify-between bg-white ${ className }` }
+      <m.div className={ `absolute -z-10 top-0 left-0 flex h-[100vh] w-[100vw] flex-col items-center justify-between bg-white ${ className }` }
              initial={ false }
              animate={ isOpen ? 'open' : 'closed' }
              variants={ variants }>
