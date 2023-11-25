@@ -79,10 +79,7 @@ const IndexPage = () => {
           <main className="relative">
             <section className="mb-16 flex h-screen flex-col items-end pb-10 md:mb-24">
               <div className="w-full overflow-hidden rounded-b-2xl bg-green-800 grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
-                <m.div className="h-full w-full"
-                       initial={ { scale: 1.15 } }
-                       animate={ { scale: 1 } }
-                       transition={ { delay: INITIAL_DELAY - 0.05, duration: 1.8, ease: [.12, .5, .28, 1] } }>
+                <m.div className="h-full w-full">
                   <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods" loading="eager"/>
                 </m.div>
               </div>
@@ -94,7 +91,7 @@ const IndexPage = () => {
                 </H1>
 
                 <div className="flex flex-col">
-                  <DefaultText className="mt-1 max-w-xs self-start sm:max-w-sm md:self-end xl:max-w-md xl:font-medium">
+                  <DefaultText className="mt-1 max-w-xs self-start sm:max-w-sm md:self-end xl:max-w-md">
                     CSR.vision hilft Unternehmen dabei, CSR als Chance zu begreifen.
                     Durch Reduzierung der Komplexität, Kuratieren und crossmediale Aufbereitung verwandeln wir CSR Berichte, die sonst nur von Analysten und
                     Stakeholdern gelesen werden, in echtes Storytelling, das auch ihre Community und Kunden begeistern wird.
