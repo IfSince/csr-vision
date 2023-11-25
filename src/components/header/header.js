@@ -6,6 +6,8 @@ import { DEFAULT_REVEAL_TRANSITION } from '../animations/config.js'
 import { DesktopMenu } from './menu/desktop-menu.js'
 import { MobileMenu } from './menu/mobile-menu.js'
 import { MenuEntry } from './menu/menu-entry.js'
+import { GroupHover } from '../group-hover.js'
+import { GroupHoverListItem } from '../group-hover-list-item.js'
 
 const variants = {
   visible: { y: 0 },
@@ -16,8 +18,6 @@ export const Header = ({ items }) => {
   const [mobileOpen, toggleMobileOpen] = useCycle(false, true)
   const [hidden, setHidden] = useState(false)
   const { scrollY } = useScroll()
-
-  const renderMenuEntries = entry => <MenuEntry { ...entry } key={ entry.text }/>
 
   useEffect(() => {
     const update = () => {
@@ -44,23 +44,35 @@ export const Header = ({ items }) => {
 
         <nav className="h-full">
           <DesktopMenu className="hidden md:flex" items={ items }>
-            {
-              items.filter(item => item.mobileOnly !== true).map(renderMenuEntries)
-            }
+            <GroupHover>
+              {
+                (params) => (items.filter(item => item.mobileOnly !== true).map(item =>
+                    <GroupHoverListItem index={ item.index } { ...params } key={ item.index }>
+                      <MenuEntry { ...item }/>
+                    </GroupHoverListItem>,
+                  )
+                )
+              }
+            </GroupHover>
           </DesktopMenu>
 
           <MobileMenu className="md:hidden"
                       items={ items }
                       isOpen={ mobileOpen }
                       toggleOpen={ toggleMobileOpen }>
-            {
-              items.map(entry => <MenuEntry text={ entry.text }
-                                            onClick={ () => {
-                                              toggleMobileOpen()
-                                              entry.onClick()
-                                            } }
-                                            key={ entry.text }/>)
-            }
+            <GroupHover>
+              {
+                params => items.map(item =>
+                  <GroupHoverListItem index={ item.index } { ...params } key={ item.index }>
+                    <MenuEntry { ...item }
+                               onClick={ () => {
+                                 toggleMobileOpen()
+                                 item.onClick()
+                               } }/>
+                  </GroupHoverListItem>,
+                )
+              }
+            </GroupHover>
           </MobileMenu>
         </nav>
       </HorizontalWrapper>

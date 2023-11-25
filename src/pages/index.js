@@ -20,7 +20,6 @@ import DummyVideo from '../videos/video.mp4'
 
 
 /* TODO
-* Video Bereich ausbauen/Video einbinden
 * Hover für Links besser
 * Header schöner machen
 */
@@ -50,10 +49,10 @@ const IndexPage = () => {
   const contactSectionRef = useRef(null)
 
   const navItems = [
-    { text: 'home', mobileOnly: true, onClick: () => window.scrollTo({ top: 0 }) },
-    { text: 'our vision', onClick: () => scrollToTarget(ourVisionSectionRef, scrollY) },
-    { text: 'about us', onClick: () => scrollToTarget(aboutUsSectionRef, scrollY) },
-    { text: 'contact', onClick: () => scrollToTarget(contactSectionRef, scrollY) },
+    { index: 0, text: 'home', mobileOnly: true, onClick: () => window.scrollTo({ top: 0 }) },
+    { index: 1, text: 'our vision', onClick: () => scrollToTarget(ourVisionSectionRef, scrollY) },
+    { index: 2, text: 'about us', onClick: () => scrollToTarget(aboutUsSectionRef, scrollY) },
+    { index: 3, text: 'contact', onClick: () => scrollToTarget(contactSectionRef, scrollY) },
   ]
 
   return (

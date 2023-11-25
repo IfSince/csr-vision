@@ -4,9 +4,10 @@ import { ButtonTemplate } from '../button/button-template.js'
 import { InstagramIcon } from '../icons/socials/instagram-icon.js'
 import { LinkedinIcon } from '../icons/socials/linkedin-icon.js'
 import { HorizontalWrapper } from '../layout/horizontal-wrapper.js'
+import { GroupHover } from '../group-hover.js'
+import { GroupHoverListItem } from '../group-hover-list-item.js'
 
 export const Footer = ({ items }) => {
-  const renderLink = entry => <FooterLink { ...entry } key={ entry.text }/>
 
   return (
     <footer>
@@ -18,11 +19,16 @@ export const Footer = ({ items }) => {
 
           <div className="flex grow flex-col justify-between">
             <ul>
-              {
-                items.map(renderLink)
-              }
+              <GroupHover>
+                {
+                  (params) => (items.map(item =>
+                    <GroupHoverListItem index={ item.index } { ...params } key={ item.index }>
+                      <FooterLink { ...item }/>
+                    </GroupHoverListItem>,
+                  ))
+                }
+              </GroupHover>
             </ul>
-
           </div>
 
           <ul className="flex grow-0 flex-col gap-5 pr-8 min-w-[20%]">
@@ -52,8 +58,6 @@ export const Footer = ({ items }) => {
             </li>
           </ul>
         </div>
-
-
 
 
         <div className="flex w-full flex-wrap justify-between gap-x-3 gap-y-4">

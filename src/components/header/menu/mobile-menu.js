@@ -16,7 +16,7 @@ export const MobileMenu = ({ isOpen, toggleOpen, children, className }) =>
            variants={ variants }
            transition={ { stiffness: 1000 } }>
 
-      <ul className="flex w-full flex-col items-center gap-y-6 font-bold leading-tight font-undotted text-h1">
+      <ul className="flex w-full flex-col items-center font-bold leading-tight text-h1">
         { children }
       </ul>
 
