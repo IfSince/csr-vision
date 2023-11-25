@@ -44,6 +44,13 @@ module.exports = {
       },
       __key: 'images',
     },
-    'gatsby-plugin-breakpoints'
+    {
+      resolve: 'gatsby-plugin-breakpoints',
+      options: {
+        queries: {
+          sm: '(max-width: 640px)'
+        }
+      }
+    },
   ],
 }

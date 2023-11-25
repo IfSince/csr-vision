@@ -23,7 +23,7 @@ export const SmoothScroll = ({ children }) => {
 
   const { scrollY } = useScroll()
   const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight])
-  const spring = useSpring(transform, { damping: 15, mass: 0.27, stiffness: 55 })
+  const spring = useSpring(transform, { damping: 20, mass: 0.25, stiffness: 80 })
 
   return isMobile
     ? children

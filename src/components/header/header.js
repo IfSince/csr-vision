@@ -2,13 +2,12 @@ import { HorizontalWrapper } from '../layout/horizontal-wrapper.js'
 import { m, useCycle, useScroll } from 'framer-motion'
 import logo from '../../images/logo-variants/logo.svg'
 import { useEffect, useState } from 'react'
-import { DEFAULT_REVEAL_TRANSITION } from '../animations/config.js'
 import { DesktopMenu } from './menu/desktop-menu.js'
 import { MobileMenu } from './menu/mobile-menu.js'
 
 const variants = {
   visible: { y: 0 },
-  hidden: { y: '-100%' },
+  hidden: { y: '-100%', transition: { delay: 0.5 } },
 }
 
 export const Header = ({ items }) => {
@@ -29,10 +28,13 @@ export const Header = ({ items }) => {
   }, [scrollY])
 
   return (
-    <m.header className="fixed h-16 w-full bg-white z-[9999] md:h-20 md:overflow-hidden"
+    <m.header className="fixed h-16 w-full bg-white z-[9000] md:h-20 md:overflow-hidden"
               variants={ variants }
               animate={ (hidden && !mobileOpen) ? 'hidden' : 'visible' }
-              transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease } }>
+              transition={ {
+                duration: 0.7,
+                ease: [.25, .99, .26, .99],
+              } }>
 
       <HorizontalWrapper className="flex h-full w-full items-center justify-between">
         <a href="/" className="flex h-full w-28 items-center justify-center md:w-32">
