@@ -15,12 +15,11 @@ import { ButtonTemplate } from '../components/button/button-template.js'
 import { useRef } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
 import { Footer } from '../components/footer/footer.js'
-
 import DummyVideo from '../videos/video.mp4'
 
 
 /* TODO
-* Hover für Links besser
+* Hero Section cooler (z. B. Slider)
 * Header schöner machen
 */
 
@@ -61,7 +60,7 @@ const IndexPage = () => {
 
       <SmoothScroll>
         <main className="relative">
-          <section className="mb-16 flex h-screen flex-col items-end pt-16 pb-10 md:mb-24 md:pt-20">
+          <section className="mb-16 flex h-screen flex-col items-end pb-10 md:mb-24">
             <div className="w-full overflow-hidden rounded-b-2xl bg-green-800 grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
               <m.div className="h-full w-full"
                      initial={ { scale: 1.15 } }

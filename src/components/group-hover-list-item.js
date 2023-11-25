@@ -7,8 +7,10 @@ export const GroupHoverListItem = ({
   variants = {},
   animate = () => void 0,
   children,
+  className = '',
 }) =>
-  <m.li onMouseOver={ () => onMouseOver(index) }
+  <m.li className={ className }
+        onMouseOver={ () => onMouseOver(index) }
         onMouseLeave={ () => onMouseLeave(index) }
         variants={ variants }
         animate={ animate(index) }>
