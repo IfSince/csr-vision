@@ -12,10 +12,10 @@ const variants = {
 
 
 export const MobileMenuEntry = ({ className = '', text, onClick = () => void 0 }) =>
-  <div style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } }>
+  <li style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } }>
     <m.button className={ `inline capitalize py-1.5 hover:underline underline-offset-4 ${ className }` }
               onClick={ onClick }
               variants={ variants }>
       { text }
     </m.button>
-  </div>
+  </li>

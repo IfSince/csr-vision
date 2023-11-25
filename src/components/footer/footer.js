@@ -14,7 +14,7 @@ export const Footer = ({ items }) => {
       <HorizontalWrapper className="pt-24 pb-8 md:pt-40">
         <div className="mb-20 flex w-full flex-row flex-wrap gap-x-8 gap-y-10 md:mb-32">
           <div className="grow">
-            <img className="h-60 w-auto" src={ logo_with_claim } alt="Logo"/>
+            <img className="h-60 w-fit" src={ logo_with_claim } alt="Logo"/>
           </div>
 
           <div className="flex grow flex-col justify-between">
@@ -45,12 +45,14 @@ export const Footer = ({ items }) => {
               <div className="flex gap-3">
                 <a href="/">
                   <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black">
+                    <span className="sr-only">Instagram</span>
                     <InstagramIcon className="h-4 w-4"/>
                   </ButtonTemplate>
                 </a>
 
                 <a href="/">
                   <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black">
+                    <span className="sr-only">Linkedin</span>
                     <LinkedinIcon className="h-4 w-4"/>
                   </ButtonTemplate>
                 </a>

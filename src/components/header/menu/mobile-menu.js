@@ -80,12 +80,14 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
           <m.div className="flex gap-6" variants={ buttonVariants }>
             <a href="/">
               <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
+                <span className="sr-only">LinkedIn</span>
                 <LinkedinIcon className="h-5 w-5"/>
               </ButtonTemplate>
             </a>
 
             <a href="/">
               <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
+                <span className="sr-only">Instagram</span>
                 <InstagramIcon className="h-5 w-5"/>
               </ButtonTemplate>
             </a>

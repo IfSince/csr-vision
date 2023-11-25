@@ -22,10 +22,7 @@ import DummyVideo from '../videos/video.mp4'
 
 /* TODO
 * Hero Section cooler (z. B. Slider)
-* Header schöner machen
 */
-
-const INITIAL_DELAY = 0
 
 const ATTRIBUTES = [
   {
