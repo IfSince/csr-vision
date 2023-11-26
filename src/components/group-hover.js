@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const variants = {
   open: {
-    opacity: 0.5,
+    opacity: 0.3,
   },
   closed: {
     opacity: 1,

@@ -11,7 +11,7 @@ export const Footer = ({ items }) => {
 
   return (
     <footer>
-      <HorizontalWrapper className="pt-24 pb-8 md:pt-40">
+      <HorizontalWrapper className="pt-24 pb-8">
         <div className="mb-20 flex w-full flex-row flex-wrap gap-x-8 gap-y-10 md:mb-32">
           <div className="grow">
             <img className="h-60 w-fit" src={ logo_with_claim } alt="Logo"/>
