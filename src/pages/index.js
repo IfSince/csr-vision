@@ -12,35 +12,23 @@ import { Header } from '../components/header/header.js'
 import { TeamMember } from '../components/cards/team-member.js'
 import { SmoothScroll } from '../components/layout/smooth-scroll.js'
 import { ButtonTemplate } from '../components/button/button-template.js'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
 import { Footer } from '../components/footer/footer.js'
-import { Cursor } from '../components/cursor.js'
 import { VideoPlayer } from '../components/video-player.js'
 import DummyVideo from '../videos/video.mp4'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
+import { IsMobileContext } from '../util/is-mobile-context.js'
+import { CursorWrapper } from '../components/cursor/cursor-wrapper.js'
 
 
 /* TODO
 * Hero Section cooler (z. B. Slider)
 */
 
-const ATTRIBUTES = [
-  {
-    title: 'Unternehmensimage',
-    description: 'CSR-Reports zeigen, dass ein Unternehmen sich seiner sozialen und ökologischen Verantwortung bewusst ist.',
-  },
-  {
-    title: 'Marktdifferenzierung',
-    description: 'Ein starkes Engagement für CSR kann ein Unternehmen in starken Märkten von seinen Wettbewerbern abheben.',
-  },
-  {
-    title: 'Langfristige Profitabilität',
-    description: 'Unternehmen, die CSR ernst nehmen und dies in attraktiven Berichten transparent machen, sind langfristig profitabler.',
-  },
-]
-
 const IndexPage = () => {
+  const breakpoints = useBreakpoint()
+
   const { scrollY } = useScroll()
 
   const ourVisionSectionRef = useRef(null)
@@ -54,29 +42,9 @@ const IndexPage = () => {
     { index: 3, text: 'contact', onClick: () => scrollToTarget(contactSectionRef, scrollY) },
   ]
 
-  const ref = useRef(null)
-
-  const [cursorElement, setCursorElement] = useState(<></>)
-  const [cursorVariant, setCursorVariant] = useState('default')
-
-  const updateCursor = (element, variant) => {
-    element && setCursorElement(element)
-    variant && setCursorVariant(variant)
-  }
-
-  const breakpoints = useBreakpoint()
-  const isMobile = breakpoints.lg
-
   return (
-    <div ref={ ref }>
+    <IsMobileContext.Provider value={ breakpoints.lg }>
       <LazyMotion features={ domAnimation } strict>
-        {
-          !isMobile && <Cursor containerRef={ ref }
-                               cursorVariant={ cursorVariant }
-                               cursorElement={ cursorElement }/>
-        }
-
-
         <Header items={ navItems }/>
 
         <SmoothScroll>
@@ -115,7 +83,7 @@ const IndexPage = () => {
                              subText="CSR als Chance begreifen und in die DNA ihrer Kommunikation integrieren"/>
 
               <ContentSection className="flex w-full flex-col items-center">
-                <Attributes attributes={ ATTRIBUTES }/>
+                <Attributes/>
               </ContentSection>
 
               <ContentSection className="grid w-fit grid-cols-1 grid-rows-2 gap-4 sm:grid-cols-2 xl:w-full xl:grid-cols-3 2xl:w-fit"
@@ -180,9 +148,17 @@ const IndexPage = () => {
               </ContentSection>
 
 
-              <ContentSection title="Working together to create something cool." variant="dark">
-                <VideoPlayer updateCursor={ updateCursor } src={ DummyVideo } type="video/mp4"/>
-              </ContentSection>
+              <CursorWrapper>
+                {
+                  ({ updateCursor }) => (
+                    <ContentSection title="Working together to create something cool." variant="dark">
+                      <VideoPlayer src={ DummyVideo }
+                                   type="video/mp4"
+                                   updateCursor={ updateCursor }/>
+                    </ContentSection>
+                  )
+                }
+              </CursorWrapper>
             </div>
 
             <div ref={ contactSectionRef }>
@@ -201,9 +177,8 @@ const IndexPage = () => {
 
           <Footer items={ navItems }/>
         </SmoothScroll>
-
       </LazyMotion>
-    </div>
+    </IsMobileContext.Provider>
   )
 }
 
