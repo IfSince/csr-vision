@@ -4,7 +4,7 @@ import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 
 export const SmoothScroll = ({ children }) => {
   const breakpoints = useBreakpoint()
-  const isMobile = breakpoints.sm
+  const isMobile = breakpoints.lg
 
   const scrollRef = useRef(null)
 

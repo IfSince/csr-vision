@@ -6,7 +6,7 @@ import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 export const VideoPlayer = ({ src, type, updateCursor }) => {
   const ref = useRef(null)
   const breakpoints = useBreakpoint()
-  const isMobile = breakpoints.sm
+  const isMobile = breakpoints.lg
 
   const [videoHoverElement, setVideoHoverElement] = useState(<PlayIcon className="h-12 w-12 cursor-pointer fill-white"/>)
 
@@ -21,7 +21,7 @@ export const VideoPlayer = ({ src, type, updateCursor }) => {
   return (
     <>
       <video ref={ ref }
-             className="w-full rounded-md sm:cursor-none"
+             className="w-full rounded-md lg:cursor-none"
              controls={ true }
              controlsList="nodownload"
              onPlay={ () => {

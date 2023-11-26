@@ -48,7 +48,9 @@ module.exports = {
       resolve: 'gatsby-plugin-breakpoints',
       options: {
         queries: {
-          sm: '(max-width: 640px)'
+          sm: '(max-width: 640px)',
+          md: '(max-width: 768px)',
+          lg: '(max-width: 1024px)',
         }
       }
     },

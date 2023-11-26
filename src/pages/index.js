@@ -18,6 +18,7 @@ import { Footer } from '../components/footer/footer.js'
 import { Cursor } from '../components/cursor.js'
 import { VideoPlayer } from '../components/video-player.js'
 import DummyVideo from '../videos/video.mp4'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 
 
 /* TODO
@@ -63,12 +64,18 @@ const IndexPage = () => {
     variant && setCursorVariant(variant)
   }
 
+  const breakpoints = useBreakpoint()
+  const isMobile = breakpoints.lg
+
   return (
     <div ref={ ref }>
       <LazyMotion features={ domAnimation } strict>
-        <Cursor containerRef={ ref }
-                cursorVariant={ cursorVariant }
-                cursorElement={ cursorElement }/>
+        {
+          !isMobile && <Cursor containerRef={ ref }
+                               cursorVariant={ cursorVariant }
+                               cursorElement={ cursorElement }/>
+        }
+
 
         <Header items={ navItems }/>
 
