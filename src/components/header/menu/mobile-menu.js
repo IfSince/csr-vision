@@ -93,7 +93,7 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
           }
         </m.ul>
 
-        <m.div className="fixed bottom-10" variants={ listVariants }>
+        <m.div className="fixed bottom-[8vh]" variants={ listVariants }>
           <m.div className="flex gap-6" variants={ buttonVariants }>
             <a href="/">
               <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
