@@ -38,21 +38,7 @@ const itemVariants = {
     transition: { duration: 0.5, ease: [.28, 1, .35, .99] },
   },
   closed: {
-    y: '120%',
-  },
-}
-
-const buttonVariants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { delay: 0.5, stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 300,
-    opacity: 0,
+    y: '125%',
   },
 }
 
@@ -74,7 +60,7 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
         }
       </button>
 
-      <m.div className={ `absolute -z-10 overflow-hidden top-0 left-0 flex h-[100vh] w-full flex-col items-center justify-center bg-white ${ className }` }
+      <m.div className={ `mt-10 absolute -z-10 overflow-hidden top-0 left-0 flex h-[100vh] w-full flex-col items-center justify-center bg-white ${ className }` }
              initial={ false }
              animate={ isOpen ? 'open' : 'closed' }
              variants={ variants }>
@@ -82,7 +68,8 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
         <m.ul className="flex w-full flex-col items-center gap-2 horizontal-spacing"
               variants={ listVariants }>
           {
-            items.map(item => <li style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } } key={ item.index }>
+            items.map(item =>
+              <li style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } } key={ item.index }>
                 <m.button className="py-1 font-black leading-none tracking-tight underline-offset-4 font-undotted text-h1 hover:underline"
                           onClick={ () => onClickFn(item) }
                           variants={ itemVariants }>
@@ -91,25 +78,25 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
               </li>,
             )
           }
+
+          <li className="mt-10" style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } }>
+            <m.div className="flex gap-6" variants={ itemVariants }>
+              <a href="/">
+                <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
+                  <span className="sr-only">LinkedIn</span>
+                  <LinkedinIcon className="h-5 w-5"/>
+                </ButtonTemplate>
+              </a>
+
+              <a href="/">
+                <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
+                  <span className="sr-only">Instagram</span>
+                  <InstagramIcon className="h-5 w-5"/>
+                </ButtonTemplate>
+              </a>
+            </m.div>
+          </li>
         </m.ul>
-
-        <m.div className="fixed bottom-[8vh]" variants={ listVariants }>
-          <m.div className="flex gap-6" variants={ buttonVariants }>
-            <a href="/">
-              <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
-                <span className="sr-only">LinkedIn</span>
-                <LinkedinIcon className="h-5 w-5"/>
-              </ButtonTemplate>
-            </a>
-
-            <a href="/">
-              <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
-                <span className="sr-only">Instagram</span>
-                <InstagramIcon className="h-5 w-5"/>
-              </ButtonTemplate>
-            </a>
-          </m.div>
-        </m.div>
       </m.div>
     </>
   )
