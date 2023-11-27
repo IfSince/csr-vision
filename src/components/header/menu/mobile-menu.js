@@ -17,7 +17,8 @@ const variants = {
     y: '-100%',
     transition: {
       delay: 0.5,
-      stiffness: 1000,
+      duration: 0.4,
+      ease: [.44, .71, .27, 1]
     },
   },
 }
@@ -40,7 +41,7 @@ const buttonVariants = {
     },
   },
   closed: {
-    y: 200,
+    y: 300,
     opacity: 0,
   },
 }

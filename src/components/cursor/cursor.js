@@ -10,7 +10,7 @@ export const Cursor = ({ containerRef, cursorVariant, cursorElement = <></> }) =
 
   const variants = {
     default: {
-      opacity: 1,
+      opacity: 0,
       height: 15,
       width: 15,
       backgroundColor: theme.colors.green['800'],

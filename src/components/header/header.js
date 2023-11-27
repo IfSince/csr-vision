@@ -6,8 +6,12 @@ import { DesktopMenu } from './menu/desktop-menu.js'
 import { MobileMenu } from './menu/mobile-menu.js'
 
 const variants = {
-  visible: { y: 0 },
-  hidden: { y: '-100%', transition: { delay: 0.5 } },
+  visible: {
+    y: 0,
+  },
+  hidden: {
+    y: '-100%',
+  },
 }
 
 export const Header = ({ items }) => {
@@ -31,10 +35,8 @@ export const Header = ({ items }) => {
     <m.header className="fixed h-16 w-full bg-white z-[9000] md:h-20 md:overflow-hidden"
               variants={ variants }
               animate={ (hidden && !mobileOpen) ? 'hidden' : 'visible' }
-              transition={ {
-                duration: 0.7,
-                ease: [.25, .99, .26, .99],
-              } }>
+              transition={ { duration: 0.4, ease: [.44, .71, .27, 1] } }
+    >
 
       <HorizontalWrapper className="flex h-full w-full items-center justify-between">
         <a href="/" className="flex h-full w-28 items-center justify-center md:w-32">
