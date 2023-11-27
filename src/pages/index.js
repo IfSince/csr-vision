@@ -50,9 +50,11 @@ const IndexPage = () => {
         <SmoothScroll>
           <main className="relative">
             <section className="mb-16 flex h-screen flex-col items-end pb-10 md:mb-24">
-              <div className="w-full overflow-hidden rounded-b-2xl bg-black grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
+              <div className="hidden w-full overflow-hidden rounded-b-2xl bg-black grow-9999 md:block md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
                 <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods" loading="eager"/>
               </div>
+
+              <div className="block w-full bg-white grow-9999 md:hidden"></div>
 
               <div className="mt-6 flex w-full flex-col gap-x-24 pb-10 horizontal-spacing lg:flex-row lg:justify-between xl:pb-0">
                 <H1 className="flex flex-col mb-[0.4em] lg:mb-0">
