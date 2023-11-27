@@ -1,4 +1,4 @@
 export const FooterLink = ({ text, onClick = () => void 0 }) =>
-  <button className="inline font-medium capitalize leading-snug tracking-tight text-h4 p-0.5" onClick={ onClick }>
+  <button className="inline font-bold leading-none tracking-tight p-1.5 font-undotted text-h4" onClick={ onClick }>
     { text }
   </button>

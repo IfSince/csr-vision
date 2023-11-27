@@ -2,7 +2,6 @@ import { m } from 'framer-motion'
 import { ButtonTemplate } from '../../button/button-template.js'
 import { InstagramIcon } from '../../icons/socials/instagram-icon.js'
 import { LinkedinIcon } from '../../icons/socials/linkedin-icon.js'
-import { MobileMenuEntry } from './mobile-menu-entry.js'
 import { MenuIcon } from '../../icons/menu-icon.js'
 
 const variants = {
@@ -18,7 +17,7 @@ const variants = {
     transition: {
       delay: 0.5,
       duration: 0.4,
-      ease: [.44, .71, .27, 1]
+      ease: [.44, .71, .27, 1],
     },
   },
 }
@@ -29,6 +28,16 @@ const listVariants = {
   },
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+}
+
+const itemVariants = {
+  open: {
+    y: 0,
+    transition: { duration: 0.5, ease: [.28, 1, .35, .99] },
+  },
+  closed: {
+    y: '120%',
   },
 }
 
@@ -69,10 +78,13 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
         <m.ul className="mt-10 flex w-full flex-col items-center gap-2 horizontal-spacing"
               variants={ listVariants }>
           {
-            items.map(item => <MobileMenuEntry className="!uppercase tracking-tight font-black leading-none text-h1"
-                                               { ...item }
-                                               key={ item.index }
-                                               onClick={ () => onClickFn(item) }/>,
+            items.map(item => <li style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } } key={ item.index }>
+                <m.button className="py-1 font-black leading-none tracking-tight underline-offset-4 font-undotted text-h1 hover:underline"
+                          onClick={ () => onClickFn(item) }
+                          variants={ itemVariants }>
+                  { item.text }
+                </m.button>
+              </li>,
             )
           }
         </m.ul>

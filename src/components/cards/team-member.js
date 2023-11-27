@@ -15,6 +15,6 @@ export const TeamMember = ({ role, name, children, className = '' }) =>
         { children }
       </ImageHover>
     </div>
-    <span className="mt-2 block font-medium tracking-tight text-green-800">{ role }</span>
-    <H4 className="mt-1 sm:mt-2">{ name }</H4>
+    <span className="mt-2 block font-medium tracking-tight ml-0.5">{ role }</span>
+    <H4 className="mt-1 ml-0.5 sm:mt-2">{ name }</H4>
   </m.article>

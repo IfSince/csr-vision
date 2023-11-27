@@ -3,7 +3,7 @@ import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../animation
 import { H4 } from '../typography/h4.js'
 import { DefaultText } from '../typography/default-text.js'
 
-export const Card = ({ title, description, className }) => {
+export const Card = ({ title, description, src, alt, className }) => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -26,9 +26,11 @@ export const Card = ({ title, description, className }) => {
              style={ { background: useMotionTemplate`radial-gradient(circle at ${ mouseX }px ${ mouseY }px, rgba(65,124,94,0.5), transparent 80%)` } }></m.div>
 
       <div className="relative">
-        <div className="h-28 w-40 rounded-md bg-white"></div>
-        <H4 className="mt-8 h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0 md:mt-10">{ title }</H4>
-        <DefaultText className="mb-4 block font-medium text-black lg:mb-6 xl:mb-8">Header Random</DefaultText>
+        <img className="mb-10 h-20 w-auto -translate-x-[8%] sm:h-24 md:mb-8 md:h-28 lg:mb-6 lg:h-32"
+             src={ src }
+             alt={ alt }/>
+        <H4 className="h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0">{ title }</H4>
+        <DefaultText className="mb-4 block lg:mb-6 xl:mb-8">Header Random</DefaultText>
         <DefaultText>{ description }</DefaultText>
       </div>
     </m.article>

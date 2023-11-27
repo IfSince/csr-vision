@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #417c5e;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3.5px;
+      }
+
+      .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        stroke: #1f1f1f;
+      }
+    </style>
+  </defs>
+  <g id="Icons">
+    <path class="cls-3" d="M9.01,18h7c2.39,0,4.33,1.94,4.33,4.33v6.85H4.68v-6.85c0-2.39,1.94-4.33,4.33-4.33Z"/>
+    <circle class="cls-3" cx="12.51" cy="10.06" r="3.23"/>
+    <circle class="cls-3" cx="24.93" cy="10.06" r="3.23"/>
+    <line class="cls-3" x1="31.33" y1="29.18" x2="24.88" y2="29.18"/>
+    <path class="cls-1" d="M24.4,18h2.61c2.39,0,4.33,1.94,4.33,4.33v6.85"/>
+  </g>
+  <g id="Exportrahmen">
+    <rect class="cls-2" width="36" height="36"/>
+  </g>
+</svg>

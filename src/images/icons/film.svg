@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #212023;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3.5px;
+      }
+
+      .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-3, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Icons">
+    <polyline class="cls-2" points="18.69 26.62 4.92 26.62 4.92 10.34 18.69 10.34"/>
+    <polyline class="cls-2" points="31.17 11.26 31.17 25.7 16.74 18.48"/>
+    <line class="cls-1" x1="16.74" y1="18.48" x2="31.17" y2="11.26"/>
+  </g>
+  <g id="Exportrahmen">
+    <polyline class="cls-3" points="0 36 0 0 36 0 36 36"/>
+  </g>
+</svg>
