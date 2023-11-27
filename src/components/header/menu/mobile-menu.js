@@ -2,7 +2,8 @@ import { m } from 'framer-motion'
 import { ButtonTemplate } from '../../button/button-template.js'
 import { InstagramIcon } from '../../icons/socials/instagram-icon.js'
 import { LinkedinIcon } from '../../icons/socials/linkedin-icon.js'
-import { MenuIcon } from '../../icons/menu-icon.js'
+import CloseIcon from '../../../images/icons/close.svg'
+import MenuIcon from '../../../images/icons/menu.svg'
 
 const variants = {
   open: {
@@ -63,10 +64,14 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
 
   return (
     <>
-      <button className={ `block h-full pl-2 text-black ${ className }` }
+      <button className={ `block h-full text-black p-1${ className }` }
               onClick={ toggleOpen }>
         <span className="sr-only">Open menu</span>
-        <MenuIcon className="h-7 w-7"/>
+        {
+          isOpen
+            ? <img className="h-6 w-6" src={ CloseIcon } alt="Close menu"/>
+            : <img className="h-7 w-7" src={ MenuIcon } alt="Open menu"/>
+        }
       </button>
 
       <m.div className={ `absolute -z-10 overflow-hidden top-0 left-0 flex h-screen w-full flex-col items-center justify-between bg-white ${ className }` }

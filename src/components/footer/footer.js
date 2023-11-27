@@ -22,7 +22,7 @@ export const Footer = ({ items }) => {
               <GroupHover>
                 {
                   (params) => (items.map(item =>
-                    <GroupHoverListItem index={ item.index } { ...params } key={ item.index }>
+                    <GroupHoverListItem className="w-fit" index={ item.index } { ...params } key={ item.index }>
                       <FooterLink { ...item }/>
                     </GroupHoverListItem>,
                   ))

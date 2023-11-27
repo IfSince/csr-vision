@@ -7,7 +7,7 @@ export const Seo = ({ title, description, slug = '', children }) => {
   const metaDescription = description || siteMetadata.description
 
   return (
-    <Helmet htmlAttributes={ { lang: 'de' } } titleTemplate={ `%s | ${ siteMetadata.title }` }>
+    <Helmet htmlAttributes={ { lang: 'de' } } titleTemplate={ `${ siteMetadata.title } - %s` }>
       <title>{ title }</title>
       <meta name="description" content={ metaDescription }/>
       <meta name="keywords" content={ siteMetadata.keywords }/>

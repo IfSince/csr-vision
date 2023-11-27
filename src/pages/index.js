@@ -136,4 +136,4 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <Seo title="Home"/>
+export const Head = () => <Seo title="designing responsibility"/>
