@@ -74,7 +74,7 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
         }
       </button>
 
-      <m.div className={ `absolute -z-10 overflow-hidden top-0 left-0 flex h-full w-full flex-col items-center justify-between bg-white ${ className }` }
+      <m.div className={ `absolute -z-10 overflow-hidden top-0 left-0 flex h-[100vh] w-full flex-col items-center justify-between bg-white ${ className }` }
              initial={ false }
              animate={ isOpen ? 'open' : 'closed' }
              variants={ variants }>
