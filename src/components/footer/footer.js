@@ -14,7 +14,7 @@ export const Footer = ({ items }) => {
       <HorizontalWrapper className="pt-24 pb-8">
         <div className="mb-20 flex w-full flex-row flex-wrap gap-x-8 gap-y-10 md:mb-32">
           <div className="grow">
-            <img className="h-32 w-fit" src={ logo_with_claim } alt="Logo"/>
+            <img className="h-20 w-fit sm:h-24 md:h-28 lg:h-32" src={ logo_with_claim } alt="Logo"/>
           </div>
 
           <div className="flex grow flex-col justify-between">
