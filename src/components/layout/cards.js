@@ -11,6 +11,7 @@ const CARDS = [
     className: '',
     src: Copy,
     alt: 'Copy Writing',
+    iconClasses: 'h-20 sm:h-[5.7rem] md:h-[6.5rem] lg:h-[7.5rem]',
   },
   {
     title: 'Web Journeys',
