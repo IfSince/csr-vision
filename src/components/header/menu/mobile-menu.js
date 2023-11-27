@@ -74,13 +74,12 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
         }
       </button>
 
-      <m.div className={ `absolute -z-10 overflow-hidden top-0 left-0 flex h-[100vh] w-full flex-col items-center justify-between bg-white ${ className }` }
+      <m.div className={ `absolute -z-10 overflow-hidden top-0 left-0 flex h-[100vh] w-full flex-col items-center justify-center bg-white ${ className }` }
              initial={ false }
              animate={ isOpen ? 'open' : 'closed' }
              variants={ variants }>
-        <div></div>
 
-        <m.ul className="mt-10 flex w-full flex-col items-center gap-2 horizontal-spacing"
+        <m.ul className="flex w-full flex-col items-center gap-2 horizontal-spacing"
               variants={ listVariants }>
           {
             items.map(item => <li style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } } key={ item.index }>
@@ -94,7 +93,7 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
           }
         </m.ul>
 
-        <m.div className="mb-10" variants={ listVariants }>
+        <m.div className="fixed bottom-10" variants={ listVariants }>
           <m.div className="flex gap-6" variants={ buttonVariants }>
             <a href="/">
               <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
