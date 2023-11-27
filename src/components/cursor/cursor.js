@@ -13,7 +13,6 @@ export const Cursor = ({ containerRef, cursorVariant, cursorElement = <></> }) =
       opacity: 0,
       height: 15,
       width: 15,
-      backgroundColor: theme.colors.green['800'],
       x: mouseX,
       y: mouseY,
     },
