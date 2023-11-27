@@ -52,7 +52,6 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
     <>
       <button className={ `block h-full text-black p-1${ className }` }
               onClick={ toggleOpen }>
-        <span className="sr-only">Open menu</span>
         {
           isOpen
             ? <img className="h-6 w-6" src={ CloseIcon } alt="Close menu"/>
