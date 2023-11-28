@@ -3,6 +3,15 @@ import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../animation
 import { H4 } from '../typography/h4.js'
 import { DefaultText } from '../typography/default-text.js'
 
+const imgVariants = {
+  default: {
+    zoom: 0,
+  },
+  zoom: {
+    scale: 1.05,
+  },
+}
+
 export const Card = ({ title, description, src, alt, className, iconClasses = 'h-20 sm:h-24 md:h-28 lg:h-32' }) => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
@@ -19,6 +28,7 @@ export const Card = ({ title, description, src, alt, className, iconClasses = 'h
                variants={ CONTENT_REVEAL_VARIANTS }
                initial="hidden"
                whileInView="visible"
+               whileHover="zoom"
                transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease } }
                viewport={ { once: true, margin: '0px 0px -200px 0px' } }
                onMouseMove={ handleMouseMove }>
@@ -26,11 +36,13 @@ export const Card = ({ title, description, src, alt, className, iconClasses = 'h
              style={ { background: useMotionTemplate`radial-gradient(circle at ${ mouseX }px ${ mouseY }px, rgba(65,124,94,0.5), transparent 80%)` } }></m.div>
 
       <div className="relative">
-        <div className="mb-5 flex h-20 items-end sm:h-24 md:mb-7 md:h-28 lg:h-32">
+        <m.div className="mb-5 flex h-20 origin-left items-end sm:h-24 md:mb-7 md:h-28 lg:h-32"
+               variants={ imgVariants }
+               transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease } }>
           <img className={ `w-auto -translate-x-[8%] ${ iconClasses }` }
                src={ src }
                alt={ alt }/>
-        </div>
+        </m.div>
         <H4 className="h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0">{ title }</H4>
         <DefaultText className="mb-4 block lg:mb-6 xl:mb-8">Header Random</DefaultText>
         <DefaultText>{ description }</DefaultText>

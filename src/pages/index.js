@@ -22,10 +22,6 @@ import { TeamMembers } from '../components/layout/team-members.js'
 import HeroVideo from '../videos/hero_video_upscaled.mp4'
 
 
-/* TODO
-* Hero Section cooler (z. B. Slider)
-*/
-
 const IndexPage = () => {
   const breakpoints = useBreakpoint()
 
@@ -52,7 +48,7 @@ const IndexPage = () => {
             <section className="mb-16 flex h-screen flex-col items-end pb-10 md:mb-24">
               <div className="relative w-full overflow-hidden rounded-b-2xl bg-white grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
                 <video className="h-full w-full rounded-b-2xl border-green-500 object-cover md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl"
-                       autoPlay loop muted playsInline onContextMenu={(e) => e.preventDefault()}>
+                       autoPlay loop muted playsInline onContextMenu={ (e) => e.preventDefault() }>
                   <source src={ HeroVideo } type="video/mp4"/>
                 </video>
               </div>
