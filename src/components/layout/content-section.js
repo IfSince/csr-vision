@@ -13,7 +13,7 @@ export const ContentSection = ({ title = null, variant = 'default', subSection =
   }
 
   return (
-    <section className={ `${ subSection ? 'pt-4 pb-24 md:pb-40' : 'py-24 md:py-40' } ${ variantClasses[variant] }` }>
+    <section className={ `${ subSection ? 'pt-4 pb-24 md:pb-40' : 'py-24 md:py-32 xl:py-36 2xl:py-40' } ${ variantClasses[variant] }` }>
       {
         title && (
           <HorizontalWrapper className={ `border-b ${ borderClasses[variant] } pb-16 mb-4` }>

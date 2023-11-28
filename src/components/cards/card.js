@@ -31,7 +31,7 @@ export const Card = ({ title, description, src, alt, className, iconClasses = 'h
                src={ src }
                alt={ alt }/>
         </div>
-        <H4 className="h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0">{ title }</H4>
+        <H4 className="h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0 lowercase">{ title }</H4>
         <DefaultText className="mb-4 block lg:mb-6 xl:mb-8">Header Random</DefaultText>
         <DefaultText>{ description }</DefaultText>
       </div>

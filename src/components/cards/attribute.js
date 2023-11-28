@@ -8,7 +8,7 @@ export const Attribute = ({ title, description, src, alt, iconHeight, delay = 0 
              variants={ CONTENT_REVEAL_VARIANTS }
              initial="hidden"
              whileInView="visible"
-             viewport={ { once: true, margin: '0px 0px -200px 0px' } }
+             viewport={ { once: true, margin: '0px 0px -100px 0px' } }
              transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease, delay } }>
     <div className="flex h-20 items-end md:h-28 lg:h-32">
       <img className={ `w-auto ${ iconHeight }` }
