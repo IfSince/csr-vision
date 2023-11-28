@@ -31,7 +31,8 @@ export const VideoPlayer = ({ src, type, updateCursor }) => {
              onPlay={ onPlay }
              onPause={ onPause }
              onMouseEnter={ onVideoEnter }
-             onMouseLeave={ onVideoLeave }>
+             onMouseLeave={ onVideoLeave }
+             onContextMenu={ (e) => e.preventDefault() }>
         <source src={ src } type={ type }/>
       </video>
     </>

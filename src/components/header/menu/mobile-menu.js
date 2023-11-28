@@ -50,8 +50,7 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
 
   return (
     <>
-      <button className={ `block h-full text-black p-1${ className }` }
-              onClick={ toggleOpen }>
+      <button className={ `block h-full text-black p-1${ className }` } onClick={ toggleOpen }>
         {
           isOpen
             ? <img className="h-6 w-6" src={ CloseIcon } alt="Close menu"/>
@@ -59,7 +58,7 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
         }
       </button>
 
-      <m.div className={ `mt-10 absolute -z-10 overflow-hidden top-0 left-0 flex h-[100vh] w-full flex-col items-center justify-center bg-white ${ className }` }
+      <m.div className={ `text-black absolute -z-10 overflow-hidden top-0 left-0 flex h-[100vh] w-full flex-col items-center justify-center bg-white ${ className }` }
              initial={ false }
              animate={ isOpen ? 'open' : 'closed' }
              variants={ variants }>
@@ -78,7 +77,7 @@ export const MobileMenu = ({ items, isOpen, toggleOpen, className }) => {
             )
           }
 
-          <li className="mt-10" style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } }>
+          <li className="mt-10 p-2" style={ { clipPath: 'polygon(0% 0%, 0% 120%, 110% 120%, 110% 0%)' } }>
             <m.div className="flex gap-6" variants={ itemVariants }>
               <a href="/">
                 <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">

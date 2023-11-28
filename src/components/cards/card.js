@@ -26,12 +26,12 @@ export const Card = ({ title, description, src, alt, className, iconClasses = 'h
              style={ { background: useMotionTemplate`radial-gradient(circle at ${ mouseX }px ${ mouseY }px, rgba(65,124,94,0.5), transparent 80%)` } }></m.div>
 
       <div className="relative">
-        <div className="mb-6 flex h-20 items-end sm:h-24 md:mb-7 md:h-28 lg:h-32">
+        <div className="mb-5 flex h-20 items-end sm:h-24 md:mb-7 md:h-28 lg:h-32">
           <img className={ `w-auto -translate-x-[8%] ${ iconClasses }` }
                src={ src }
                alt={ alt }/>
         </div>
-        <H4 className="h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0 lowercase">{ title }</H4>
+        <H4 className="h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0">{ title }</H4>
         <DefaultText className="mb-4 block lg:mb-6 xl:mb-8">Header Random</DefaultText>
         <DefaultText>{ description }</DefaultText>
       </div>

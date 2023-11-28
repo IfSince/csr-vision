@@ -1,7 +1,6 @@
 import { Seo } from '../components/seo.js'
 import { HeaderSection } from '../components/layout/header-section.js'
 import { domAnimation, LazyMotion, useScroll } from 'framer-motion'
-import { StaticImage } from 'gatsby-plugin-image'
 import { H1 } from '../components/typography/h1.js'
 import { ScrollButton } from '../components/button/scroll-button.js'
 import { DefaultText } from '../components/typography/default-text.js'
@@ -20,6 +19,7 @@ import { IsMobileContext } from '../util/is-mobile-context.js'
 import { CursorWrapper } from '../components/cursor/cursor-wrapper.js'
 import { Cards } from '../components/layout/cards.js'
 import { TeamMembers } from '../components/layout/team-members.js'
+import HeroVideo from '../videos/hero_video_upscaled.mp4'
 
 
 /* TODO
@@ -50,12 +50,15 @@ const IndexPage = () => {
         <SmoothScroll>
           <main className="relative">
             <section className="mb-16 flex h-screen flex-col items-end pb-10 md:mb-24">
-              <div className="w-full overflow-hidden rounded-b-2xl bg-black grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
-                <StaticImage className="h-full w-full" src="../images/hero/hero_1.png" alt="Person working in the woods" loading="eager"/>
+              <div className="relative w-full overflow-hidden rounded-b-2xl bg-white grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
+                <video className="h-full w-full rounded-b-2xl border-green-500 object-cover md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl"
+                       autoPlay loop muted playsInline onContextMenu={(e) => e.preventDefault()}>
+                  <source src={ HeroVideo } type="video/mp4"/>
+                </video>
               </div>
 
-              <div className="mt-6 flex w-full flex-col gap-x-24 pb-10 horizontal-spacing lg:flex-row lg:justify-between xl:pb-0">
-                <H1 className="flex flex-col mb-[0.4em] lg:mb-0">
+              <div className="mt-3 flex w-full flex-col gap-x-12 pb-6 horizontal-spacing md:flex-row lg:justify-between lg:pb-0">
+                <H1 className="flex flex-col mb-[0.3em] lg:mb-0">
                   <span>designing</span>
                   <span>responsibility</span>
                 </H1>
@@ -67,12 +70,12 @@ const IndexPage = () => {
                     Stakeholdern gelesen werden, in echtes Storytelling, das auch ihre Community und Kunden begeistern wird.
                   </DefaultText>
 
-                  <ScrollButton className="mt-auto hidden self-end xl:flex" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY, 'smooth', 230) }/>
+                  <ScrollButton className="mt-auto hidden self-end lg:flex" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY, 'smooth') }/>
                 </div>
               </div>
 
               <div className="flex w-full justify-center">
-                <ScrollButton className="mt-auto xl:hidden" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY, 'smooth', 230) }/>
+                <ScrollButton className="mt-auto lg:hidden" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY, 'smooth') }/>
               </div>
             </section>
 
