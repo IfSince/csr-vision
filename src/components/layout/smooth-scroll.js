@@ -21,18 +21,14 @@ export const SmoothScroll = ({ children }) => {
   const spring = useSpring(transform, { damping: 15, mass: 0.2, stiffness: 70 })
 
   return (
-    isMobile
-      ? children
-      : (
-        <>
-          <m.div ref={ scrollRef }
-                 style={ { y: spring } }
-                 className="fixed top-0 left-0 w-full overflow-hidden will-change-transform">
-            { children }
-          </m.div>
+    <>
+      <m.div ref={ scrollRef }
+             style={ { y: spring } }
+             className="fixed top-0 left-0 w-full overflow-hidden will-change-transform">
+        { children }
+      </m.div>
 
-          <div style={ { height: pageHeight } }/>
-        </>
-      )
+      <div style={ { height: pageHeight } }/>
+    </>
   )
 }
