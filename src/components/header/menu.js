@@ -43,10 +43,9 @@ const itemVariants = {
   },
 }
 
-export const Menu = ({ items, isOpen, toggleOpen, preventHiding }) => {
+export const Menu = ({ items, isOpen, toggleOpen }) => {
   const onClickFn = (item) => {
     toggleOpen()
-    preventHiding()
     item.onClick()
   }
 
@@ -82,19 +81,19 @@ export const Menu = ({ items, isOpen, toggleOpen, preventHiding }) => {
           }
           <li className="mt-10 p-2 clip-path md:hidden">
             <m.div className="flex gap-6" variants={ itemVariants }>
-              <a href="/">
-                <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
+              <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
+                <a href="/">
                   <span className="sr-only">LinkedIn</span>
                   <LinkedinIcon className="h-5 w-5"/>
-                </ButtonTemplate>
-              </a>
+                </a>
+              </ButtonTemplate>
 
-              <a href="/">
-                <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
+              <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black" aria-label="LinkedIn">
+                <a href="/">
                   <span className="sr-only">Instagram</span>
                   <InstagramIcon className="h-5 w-5"/>
-                </ButtonTemplate>
-              </a>
+                </a>
+              </ButtonTemplate>
             </m.div>
           </li>
 

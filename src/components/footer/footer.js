@@ -43,19 +43,19 @@ export const Footer = ({ items }) => {
 
             <li className="mt-2">
               <div className="flex gap-3">
-                <a href="/">
-                  <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black">
+                <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black">
+                  <a href="/">
                     <span className="sr-only">Instagram</span>
                     <InstagramIcon className="h-4 w-4"/>
-                  </ButtonTemplate>
-                </a>
+                  </a>
+                </ButtonTemplate>
 
-                <a href="/">
-                  <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black">
+                <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black">
+                  <a href="/">
                     <span className="sr-only">Linkedin</span>
                     <LinkedinIcon className="h-4 w-4"/>
-                  </ButtonTemplate>
-                </a>
+                  </a>
+                </ButtonTemplate>
               </div>
             </li>
           </ul>

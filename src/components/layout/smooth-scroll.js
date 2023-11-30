@@ -18,8 +18,12 @@ export const SmoothScroll = ({ children }) => {
 
   const { scrollY } = useScroll()
   const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight])
-  const spring = useSpring(transform, { damping: 15, mass: 0.2, stiffness: 70 })
+  
+  const config = isMobile
+    ? { damping: 29, mass: 0.4, stiffness: 700 }
+    : { damping: 15, mass: 0.2, stiffness: 70 }
 
+  const spring = useSpring(transform, config)
   return (
     <>
       <m.div ref={ scrollRef }
