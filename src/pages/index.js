@@ -12,7 +12,6 @@ import { ButtonTemplate } from '../components/button/button-template.js'
 import { useRef, useState } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
 import { Footer } from '../components/footer/footer.js'
-import { VideoPlayer } from '../components/video-player.js'
 import DummyVideo from '../videos/video.mp4'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { IsMobileContext } from '../util/is-mobile-context.js'
@@ -22,6 +21,8 @@ import { TeamMembers } from '../components/layout/team-members.js'
 import HeroVideo from '../videos/hero_video_upscaled.mp4'
 import { TeamMemberDetails } from '../components/cards/team-member-details.js'
 import { TEAM_MEMBERS } from '../data/team-members.js'
+import { VideoPlayerCustomCursor } from '../components/video/video-player-custom-cursor.js'
+import { VideoPlayer } from '../components/video/video-player.js'
 
 /*
 * TODO
@@ -64,10 +65,10 @@ const IndexPage = () => {
           <main className="relative">
             <section className="mb-16 flex h-screen flex-col items-end pb-10 md:mb-24">
               <div className="relative w-full overflow-hidden rounded-b-2xl bg-white grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
-                <video className="h-full w-full rounded-b-2xl border-green-500 object-cover md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl"
-                       autoPlay loop muted playsInline onContextMenu={ (e) => e.preventDefault() }>
+                <VideoPlayer className="h-full w-full rounded-b-2xl object-cover md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl"
+                             autoPlay loop muted playsInline>
                   <source src={ HeroVideo } type="video/mp4"/>
-                </video>
+                </VideoPlayer>
               </div>
 
               <div className="mt-3 flex w-full flex-col gap-x-12 pb-6 horizontal-spacing md:flex-row lg:justify-between lg:pb-0">
@@ -122,9 +123,9 @@ const IndexPage = () => {
                 {
                   ({ updateCursor }) => (
                     <ContentSection title="Space für Image Film oder ähnliches Videotechnisch." variant="dark">
-                      <VideoPlayer src={ DummyVideo }
-                                   type="video/mp4"
-                                   updateCursor={ updateCursor }/>
+                      <VideoPlayerCustomCursor updateCursor={ updateCursor }>
+                        <source src={ DummyVideo } type="video/mp4"/>
+                      </VideoPlayerCustomCursor>
                     </ContentSection>
                   )
                 }
