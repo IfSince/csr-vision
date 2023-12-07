@@ -1,6 +1,6 @@
 import { Seo } from '../components/seo.js'
 import { HeaderSection } from '../components/layout/header-section.js'
-import { domAnimation, LazyMotion, useScroll } from 'framer-motion'
+import { domAnimation, LazyMotion, useCycle, useScroll } from 'framer-motion'
 import { H1 } from '../components/typography/h1.js'
 import { ScrollButton } from '../components/button/scroll-button.js'
 import { DefaultText } from '../components/typography/default-text.js'
@@ -9,7 +9,7 @@ import { ContentSection } from '../components/layout/content-section.js'
 import { Header } from '../components/header/header.js'
 import { SmoothScroll } from '../components/layout/smooth-scroll.js'
 import { ButtonTemplate } from '../components/button/button-template.js'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
 import { Footer } from '../components/footer/footer.js'
 import { VideoPlayer } from '../components/video-player.js'
@@ -20,7 +20,15 @@ import { CursorWrapper } from '../components/cursor/cursor-wrapper.js'
 import { Cards } from '../components/layout/cards.js'
 import { TeamMembers } from '../components/layout/team-members.js'
 import HeroVideo from '../videos/hero_video_upscaled.mp4'
+import { TeamMemberDetails } from '../components/cards/team-member-details.js'
+import { TEAM_MEMBERS } from '../data/team-members.js'
 
+/*
+* TODO
+* Clean-up
+* Optional: Disable page scroll when other elements (mobile-menu, member-details) are open
+* Blog Section
+* */
 
 const IndexPage = () => {
   const breakpoints = useBreakpoint()
@@ -38,10 +46,19 @@ const IndexPage = () => {
     { index: 3, text: 'contact', onClick: () => scrollToTarget(contactSectionRef, scrollY) },
   ]
 
+  const [teamMemberPanelVisible, toggleTeamMemberPanelVisible] = useCycle(false, true)
+  const [selectedTeamMember, setSelectedTeamMember] = useState(null)
+
   return (
     <IsMobileContext.Provider value={ breakpoints.lg }>
       <LazyMotion features={ domAnimation } strict>
         <Header items={ navItems }/>
+
+        <TeamMemberDetails { ...selectedTeamMember }
+                           visible={ teamMemberPanelVisible }
+                           toggleVisible={ toggleTeamMemberPanelVisible }
+                           setSelectedTeamMember={ setSelectedTeamMember }
+                           members={ TEAM_MEMBERS }/>
 
         <SmoothScroll>
           <main className="relative">
@@ -96,7 +113,9 @@ const IndexPage = () => {
                              variant="reversed"/>
 
               <ContentSection className="flex justify-end" subSection={ true }>
-                <TeamMembers/>
+                <TeamMembers teamMembers={ TEAM_MEMBERS }
+                             setSelectedTeamMember={ setSelectedTeamMember }
+                             toggleTeamMemberPanelVisible={ toggleTeamMemberPanelVisible }/>
               </ContentSection>
 
               <CursorWrapper>

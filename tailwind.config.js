@@ -5,6 +5,7 @@ module.exports = {
   content: [
     `./src/pages/**/*.{js,jsx,ts,tsx}`,
     `./src/components/**/*.{js,jsx,ts,tsx}`,
+    './src/data/**/*.js'
   ],
   theme: {
     extend: {
@@ -54,7 +55,7 @@ module.exports = {
       '5xl': '7.594rem', // 121.50px
       'h1': 'clamp(3.375rem, 9.5vw, 7.594rem)',
       'h2': 'clamp(3.375rem, 10vw, 7.594rem)',
-      'h3': 'clamp(1.5rem, 4.5vw, 3.375rem)',
+      'h3': 'clamp(1.75rem, 4.5vw, 3.375rem)',
       'h4': 'clamp(1.75rem, 5vw, 2.25rem)',
     },
   },

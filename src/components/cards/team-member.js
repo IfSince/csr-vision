@@ -3,13 +3,14 @@ import { m } from 'framer-motion'
 import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../animations/config.js'
 import { ImageHover } from '../animations/image-hover.js'
 
-export const TeamMember = ({ role, name, children, className = '' }) =>
-  <m.article className={ `w-full max-w-[26rem] ${ className }` }
+export const TeamMember = ({ role, name, onClick, children, className = '' }) =>
+  <m.article className={ `w-full max-w-[26rem] cursor-pointer ${ className }` }
              variants={ CONTENT_REVEAL_VARIANTS }
              initial="hidden"
              whileInView="visible"
              transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease } }
-             viewport={ { once: true, margin: '0px 0px -200px 0px' } }>
+             viewport={ { once: true, margin: '0px 0px -200px 0px' } }
+             onClick={ onClick }>
     <div className="w-full overflow-hidden rounded-sm bg-black aspect-[1/1.25]">
       <ImageHover>
         { children }

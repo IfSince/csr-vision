@@ -18,21 +18,17 @@ export const SmoothScroll = ({ children }) => {
 
   const { scrollY } = useScroll()
   const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight])
-  
-  const config = isMobile
-    ? { damping: 29, mass: 0.4, stiffness: 700 }
-    : { damping: 15, mass: 0.2, stiffness: 70 }
+  const spring = useSpring(transform, { damping: 15, mass: 0.2, stiffness: 70 })
 
-  const spring = useSpring(transform, config)
   return (
     <>
       <m.div ref={ scrollRef }
-             style={ { y: spring } }
-             className="fixed top-0 left-0 w-full overflow-hidden will-change-transform">
+             style={ { y: isMobile ? 0 : spring } }
+             className="max-lg:!translate-y-0 !transition-none w-full overflow-hidden lg:fixed lg:top-0 lg:left-0 lg:will-change-transform">
         { children }
       </m.div>
 
-      <div style={ { height: pageHeight } }/>
+      <div style={ { height: pageHeight } } className="hidden lg:block"/>
     </>
   )
 }
