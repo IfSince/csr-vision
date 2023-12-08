@@ -1,5 +1,4 @@
 import { m } from 'framer-motion'
-import { ButtonTemplate } from '../button/button-template.js'
 import { ImageHover } from '../animations/image-hover.js'
 import { DEFAULT_REVEAL_TRANSITION } from '../animations/config.js'
 import { ContentSection } from '../layout/content-section.js'
@@ -7,6 +6,7 @@ import { ArrowLeftIcon } from '../icons/arrow-left-icon.js'
 import { ArrowRightIcon } from '../icons/arrow-right-icon.js'
 import { CloseIcon } from '../icons/close-icon.js'
 import { LargeText } from '../typography/large-text.js'
+import { IconButton } from '../button/icon-button.js'
 
 const variants = {
   visible: {
@@ -30,12 +30,6 @@ export const TeamMemberDetails = ({ name, image, description, visible, toggleVis
     setSelectedTeamMember(members[newIndex])
   }
 
-  const closeButton =
-    <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black md:h-14 md:w-14"
-                    onClick={ toggleVisible }>
-      <CloseIcon className="h-5 w-5 md:h-6 md:w-6"/>
-    </ButtonTemplate>
-
   return (
     <>
       <m.div className="fixed h-screen w-full overflow-y-scroll overscroll-y-contain bg-white no-scrollbar z-[9999]"
@@ -47,17 +41,18 @@ export const TeamMemberDetails = ({ name, image, description, visible, toggleVis
                         className="relative flex w-full"
                         title={ name }
                         titleWrapperClassName="flex flex-row justify-between items-center"
-                        titleElement={ closeButton }>
+                        titleElement={ <IconButton size="md-scaling" onClick={ toggleVisible }><CloseIcon/></IconButton> }>
 
           <div className="grid w-full grid-cols-1 sm:grid-cols-7 2xl:grid-cols-10">
 
             <div className="col-span-1 mb-10 flex justify-end gap-4 sm:col-span-2 sm:col-start-6 lg:col-span-1 lg:col-start-7 2xl:col-start-10">
-              <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black md:h-14 md:w-14" onClick={ selectPrevious }>
-                <ArrowLeftIcon className="h-5 w-5 md:h-6 md:w-6"/>
-              </ButtonTemplate>
-              <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black md:h-14 md:w-14" onClick={ selectNext }>
-                <ArrowRightIcon className="h-5 w-5 md:h-6 md:w-6"/>
-              </ButtonTemplate>
+              <IconButton size="md-scaling" onClick={ selectPrevious }>
+                <ArrowLeftIcon/>
+              </IconButton>
+
+              <IconButton size="md-scaling" onClick={ selectNext }>
+                <ArrowRightIcon/>
+              </IconButton>
             </div>
 
             <div className="mb-8 sm:col-span-5 sm:row-start-1 lg:col-span-4 lg:col-start-3 lg:mx-8 2xl:col-span-5 2xl:col-start-5">

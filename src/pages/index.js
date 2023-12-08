@@ -8,7 +8,6 @@ import { Attributes } from '../components/layout/attributes.js'
 import { ContentSection } from '../components/layout/content-section.js'
 import { Header } from '../components/header/header.js'
 import { SmoothScroll } from '../components/layout/smooth-scroll.js'
-import { ButtonTemplate } from '../components/button/button-template.js'
 import { useRef, useState } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
 import { Footer } from '../components/footer/footer.js'
@@ -23,6 +22,7 @@ import { TeamMemberDetails } from '../components/cards/team-member-details.js'
 import { TEAM_MEMBERS } from '../data/team-members.js'
 import { VideoPlayerCustomCursor } from '../components/video/video-player-custom-cursor.js'
 import { VideoPlayer } from '../components/video/video-player.js'
+import { TextButton } from '../components/button/text-button.js'
 
 /*
 * TODO
@@ -64,9 +64,8 @@ const IndexPage = () => {
         <SmoothScroll>
           <main className="relative">
             <section className="mb-16 flex h-screen flex-col items-end pb-10 md:mb-24">
-              <div className="relative w-full overflow-hidden rounded-b-2xl bg-white grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
-                <VideoPlayer className="h-full w-full rounded-b-2xl object-cover md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl"
-                             autoPlay loop muted playsInline>
+              <div className="w-full overflow-hidden rounded-b-2xl bg-white grow-9999 md:rounded-b-3xl lg:rounded-b-4xl xl:rounded-b-5xl">
+                <VideoPlayer className="h-full w-full object-cover" autoPlay loop muted playsInline>
                   <source src={ HeroVideo } type="video/mp4"/>
                 </VideoPlayer>
               </div>
@@ -84,12 +83,12 @@ const IndexPage = () => {
                     Stakeholdern gelesen werden, in echtes Storytelling, das auch ihre Community und Kunden begeistern wird.
                   </DefaultText>
 
-                  <ScrollButton className="mt-auto hidden self-end lg:flex" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY, 'smooth') }/>
+                  <ScrollButton className="hidden self-end lg:flex" target={ ourVisionSectionRef } scrollY={ scrollY }/>
                 </div>
               </div>
 
-              <div className="flex w-full justify-center">
-                <ScrollButton className="mt-auto lg:hidden" onClick={ () => scrollToTarget(ourVisionSectionRef, scrollY, 'smooth') }/>
+              <div className="flex w-full justify-center lg:hidden">
+                <ScrollButton target={ ourVisionSectionRef } scrollY={ scrollY }/>
               </div>
             </section>
 
@@ -136,12 +135,9 @@ const IndexPage = () => {
               <HeaderSection title="interested?"
                              subText="Show us your project and we'll find a way."
                              subElement={
-                               <ButtonTemplate>
-                                 <a className="block w-56 rounded-full font-medium tracking-tight z-1 py-2.5 md:w-64 md:py-3 lg:w-80 xl:w-[24rem]"
-                                    href="mailto:abc@example.com">
-                                   Schreib uns
-                                 </a>
-                               </ButtonTemplate>
+                               <a href="mailto:abc@example.com">
+                                 <TextButton>Schreib uns</TextButton>
+                               </a>
                              }/>
             </div>
           </main>

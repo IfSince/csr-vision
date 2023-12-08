@@ -1,11 +1,11 @@
 import logo_with_claim from '../../images/logo-variants/logo_with_claim.svg'
 import { FooterLink } from './footer-link.js'
-import { ButtonTemplate } from '../button/button-template.js'
 import { InstagramIcon } from '../icons/socials/instagram-icon.js'
 import { LinkedinIcon } from '../icons/socials/linkedin-icon.js'
 import { HorizontalWrapper } from '../layout/horizontal-wrapper.js'
 import { GroupHover } from '../group-hover.js'
 import { GroupHoverListItem } from '../group-hover-list-item.js'
+import { IconButton } from '../button/icon-button.js'
 
 export const Footer = ({ items }) => {
 
@@ -44,17 +44,15 @@ export const Footer = ({ items }) => {
             <li className="mt-2">
               <div className="flex gap-3">
                 <a href="/">
-                  <span className="sr-only">Instagram</span>
-                  <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black">
-                    <InstagramIcon className="h-4 w-4"/>
-                  </ButtonTemplate>
+                  <IconButton size="sm">
+                    <InstagramIcon/>
+                  </IconButton>
                 </a>
 
                 <a href="/">
-                  <span className="sr-only">Linkedin</span>
-                  <ButtonTemplate className="flex h-12 w-12 items-center justify-center rounded-full fill-black">
-                    <LinkedinIcon className="h-4 w-4"/>
-                  </ButtonTemplate>
+                  <IconButton size="sm">
+                    <LinkedinIcon/>
+                  </IconButton>
                 </a>
               </div>
             </li>

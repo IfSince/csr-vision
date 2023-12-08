@@ -1,9 +1,9 @@
 import { m } from 'framer-motion'
 import CloseIcon from '../../images/icons/close.svg'
 import MenuIcon from '../../images/icons/menu.svg'
-import { ButtonTemplate } from '../button/button-template.js'
 import { LinkedinIcon } from '../icons/socials/linkedin-icon.js'
 import { InstagramIcon } from '../icons/socials/instagram-icon.js'
+import { IconButton } from '../button/icon-button.js'
 
 const menuVariants = {
   open: {
@@ -82,17 +82,15 @@ export const Menu = ({ items, isOpen, toggleOpen }) => {
           <li className="mt-10 p-2 clip-path md:hidden">
             <m.div className="flex gap-6" variants={ itemVariants }>
               <a href="/">
-                <span className="sr-only">LinkedIn</span>
-                <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
-                  <LinkedinIcon className="h-5 w-5"/>
-                </ButtonTemplate>
+                <IconButton size="md">
+                  <LinkedinIcon/>
+                </IconButton>
               </a>
 
               <a href="/">
-                <span className="sr-only">Instagram</span>
-                <ButtonTemplate className="flex h-14 w-14 items-center justify-center rounded-full fill-black">
-                  <InstagramIcon className="h-5 w-5"/>
-                </ButtonTemplate>
+                <IconButton size="md">
+                  <InstagramIcon/>
+                </IconButton>
               </a>
             </m.div>
           </li>

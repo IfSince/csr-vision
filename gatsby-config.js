@@ -6,7 +6,7 @@ const { theme } = require('./tailwind.config.js')
 module.exports = {
   siteMetadata: {
     title: 'csr vision',
-    description: 'csr vision - design responsibility',
+    description: 'csr vision - designing responsibility',
     author: 'Leon Laade',
     siteUrl: 'https://csr.vision/',
     image: 'src/images/logo-variants/icon.svg',

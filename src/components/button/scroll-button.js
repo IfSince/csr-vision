@@ -1,9 +1,9 @@
-import { ButtonTemplate } from './button-template.js'
 import { ArrowDownIcon } from '../icons/arrow-down-icon.js'
+import { scrollToTarget } from '../../util/scroll-to-target.js'
+import { IconButton } from './icon-button.js'
 
-export const ScrollButton = ({ className, onClick }) =>
-  <ButtonTemplate className={ `flex h-16 w-16 items-center justify-center rounded-full fill-black md:h-20 md:w-20 ${ className }` }
-                  onClick={ onClick }>
-    <span className="sr-only">Scroll Down</span>
-    <ArrowDownIcon className="h-6 w-6 md:h-7 md:w-7"/>
-  </ButtonTemplate>
+export const ScrollButton = ({ className = '', target, scrollY }) =>
+  <IconButton className={ `mt-auto ${ className }` }
+              onClick={ () => scrollToTarget(target, scrollY, 'smooth') }>
+    <ArrowDownIcon/>
+  </IconButton>
