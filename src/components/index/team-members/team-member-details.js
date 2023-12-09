@@ -7,8 +7,8 @@ import { ContentWrapper } from '../../layout/wrapper/content-wrapper.js'
 import { ArrowLeftIcon } from '../../icons/arrow-left-icon.js'
 import { ArrowRightIcon } from '../../icons/arrow-right-icon.js'
 import { LargeText } from '../../typography/large-text.js'
-import { ImageHover } from '../../animations/image-hover.js'
 import { CloseIcon } from '../../icons/close-icon.js'
+import { ZoomHover } from '../../animations/zoom-hover.js'
 
 const variants = {
   visible: {
@@ -39,7 +39,7 @@ export const TeamMemberDetails = ({ name, image, description, visible, toggleVis
            initial="hidden"
            transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease } }>
       <HeaderWrapper spacingType="content" className="flex-row items-center justify-between">
-        <H3>{ name }</H3>
+        <H3 animated={ false }>{ name }</H3>
         <IconButton size="md-scaling" onClick={ toggleVisible }>
           <CloseIcon/>
         </IconButton>
@@ -62,9 +62,9 @@ export const TeamMemberDetails = ({ name, image, description, visible, toggleVis
 
         <div className="col-start-1 w-full sm:col-span-4 lg:col-span-2 lg:col-start-1 lg:row-start-1 2xl:col-span-4">
           <div className="h-full max-w-sm overflow-hidden rounded-sm bg-black aspect-[1/1.25]">
-            <ImageHover>
+            <ZoomHover>
               { image }
-            </ImageHover>
+            </ZoomHover>
           </div>
         </div>
       </ContentWrapper>
