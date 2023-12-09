@@ -1,7 +1,7 @@
 import { m, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../animations/config.js'
-import { H4 } from '../typography/h4.js'
-import { DefaultText } from '../typography/default-text.js'
+import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../../animations/config.js'
+import { H4 } from '../../typography/h4.js'
+import { DefaultText } from '../../typography/default-text.js'
 
 const imgVariants = {
   default: {
@@ -12,7 +12,7 @@ const imgVariants = {
   },
 }
 
-export const Card = ({ title, description, src, alt, className, iconClasses = 'h-20 sm:h-24 md:h-28 lg:h-32' }) => {
+export const Service = ({ title, description, src, alt, className, iconClasses = 'h-20 sm:h-24 md:h-28 lg:h-32' }) => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 

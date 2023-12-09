@@ -1,17 +1,16 @@
 import logo_with_claim from '../../images/logo-variants/logo_with_claim.svg'
 import { FooterLink } from './footer-link.js'
-import { InstagramIcon } from '../icons/socials/instagram-icon.js'
 import { LinkedinIcon } from '../icons/socials/linkedin-icon.js'
-import { HorizontalWrapper } from '../layout/horizontal-wrapper.js'
 import { GroupHover } from '../group-hover.js'
 import { GroupHoverListItem } from '../group-hover-list-item.js'
-import { IconButton } from '../button/icon-button.js'
+import { LinkIconButton } from '../buttons/link-icon-button.js'
+import { InstagramIcon } from '../icons/socials/instagram-icon.js'
 
 export const Footer = ({ items }) => {
 
   return (
     <footer>
-      <HorizontalWrapper className="pt-24 pb-8">
+      <div className="pt-24 pb-8 horizontal-spacing">
         <div className="mb-20 flex w-full flex-row flex-wrap gap-x-8 gap-y-10 md:mb-32">
           <div className="grow">
             <img className="h-20 w-fit sm:h-24 md:h-28 lg:h-32" src={ logo_with_claim } alt="Logo"/>
@@ -43,17 +42,13 @@ export const Footer = ({ items }) => {
 
             <li className="mt-2">
               <div className="flex gap-3">
-                <a href="/">
-                  <IconButton size="sm">
-                    <InstagramIcon/>
-                  </IconButton>
-                </a>
+                <LinkIconButton size="sm" label="Instagram">
+                  <InstagramIcon/>
+                </LinkIconButton>
 
-                <a href="/">
-                  <IconButton size="sm">
-                    <LinkedinIcon/>
-                  </IconButton>
-                </a>
+                <LinkIconButton size="sm" label="LinkedIn">
+                  <LinkedinIcon/>
+                </LinkIconButton>
               </div>
             </li>
           </ul>
@@ -70,7 +65,7 @@ export const Footer = ({ items }) => {
           </div>
         </div>
 
-      </HorizontalWrapper>
+      </div>
     </footer>
   )
 }

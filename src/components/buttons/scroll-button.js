@@ -5,5 +5,6 @@ import { IconButton } from './icon-button.js'
 export const ScrollButton = ({ className = '', target, scrollY }) =>
   <IconButton className={ `mt-auto ${ className }` }
               onClick={ () => scrollToTarget(target, scrollY, 'smooth') }>
+    <span className="sr-only">Scroll Down</span>
     <ArrowDownIcon/>
   </IconButton>

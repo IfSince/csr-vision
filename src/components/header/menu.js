@@ -3,7 +3,7 @@ import CloseIcon from '../../images/icons/close.svg'
 import MenuIcon from '../../images/icons/menu.svg'
 import { LinkedinIcon } from '../icons/socials/linkedin-icon.js'
 import { InstagramIcon } from '../icons/socials/instagram-icon.js'
-import { IconButton } from '../button/icon-button.js'
+import { LinkIconButton } from '../buttons/link-icon-button.js'
 
 const menuVariants = {
   open: {
@@ -81,17 +81,13 @@ export const Menu = ({ items, isOpen, toggleOpen }) => {
           }
           <li className="mt-10 p-2 clip-path md:hidden">
             <m.div className="flex gap-6" variants={ itemVariants }>
-              <a href="/">
-                <IconButton size="md">
-                  <LinkedinIcon/>
-                </IconButton>
-              </a>
+              <LinkIconButton size="md" label="Instagram">
+                <InstagramIcon/>
+              </LinkIconButton>
 
-              <a href="/">
-                <IconButton size="md">
-                  <InstagramIcon/>
-                </IconButton>
-              </a>
+              <LinkIconButton size="md" label="LinkedIn">
+                <LinkedinIcon/>
+              </LinkIconButton>
             </m.div>
           </li>
 

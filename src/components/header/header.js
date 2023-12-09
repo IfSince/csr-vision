@@ -1,4 +1,3 @@
-import { HorizontalWrapper } from '../layout/horizontal-wrapper.js'
 import { m, useCycle, useMotionValueEvent, useScroll } from 'framer-motion'
 import Logo from '../../images/logo-variants/logo.svg'
 import LogoLight from '../../images/logo-variants/logo_light.svg'
@@ -24,7 +23,7 @@ export const Header = ({ items }) => {
   const [mobileOpen, toggleMobileOpen] = useCycle(false, true)
   const [headerScrolled, setHeaderScrolled] = useState(false)
 
-  const update = (latest) => setHeaderScrolled(latest > 225)
+  const update = latest => setHeaderScrolled(latest > 225)
 
   useMotionValueEvent(scrollY, 'change', update)
 
@@ -33,7 +32,7 @@ export const Header = ({ items }) => {
               variants={ variants }
               animate={ headerScrolled ? 'scrolled' : 'initial' }
               transition={ { duration: 0.4, ease: [.44, .71, .27, 1] } }>
-      <HorizontalWrapper className="flex h-full w-full items-center justify-between">
+      <div className="flex h-full w-full items-center justify-between horizontal-spacing">
         <a href="/" className="flex h-full w-28 items-center justify-center md:w-32">
           {
             <img className="h-auto w-full" src={ (!headerScrolled && !mobileOpen) ? LogoLight : Logo } alt="Logo"/>
@@ -43,7 +42,7 @@ export const Header = ({ items }) => {
         <Menu items={ items }
               isOpen={ mobileOpen }
               toggleOpen={ toggleMobileOpen }/>
-      </HorizontalWrapper>
+      </div>
     </m.header>
   )
 }

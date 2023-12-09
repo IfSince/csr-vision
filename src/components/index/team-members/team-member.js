@@ -1,7 +1,7 @@
-import { H4 } from '../typography/h4.js'
 import { m } from 'framer-motion'
-import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../animations/config.js'
-import { ImageHover } from '../animations/image-hover.js'
+import { CONTENT_REVEAL_VARIANTS, DEFAULT_REVEAL_TRANSITION } from '../../animations/config.js'
+import { ImageHover } from '../../animations/image-hover.js'
+import { H4 } from '../../typography/h4.js'
 
 export const TeamMember = ({ role, name, onClick, children, className = '' }) =>
   <m.article className={ `w-full max-w-[26rem] cursor-pointer ${ className }` }

@@ -16,7 +16,7 @@ export const IconButton = ({ onClick = () => void 0, size = 'lg', className = ''
   }
 
   return (
-    <ButtonTemplate className={ `rounded-full fill-black ${ sizes[size] } ${ className }` }
+    <ButtonTemplate className={ `fill-black ${ sizes[size] } ${ className }` }
                     onClick={ onClick }>
       <span className={ iconSizes[size] }>
         { children }

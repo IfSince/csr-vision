@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { m, useScroll, useSpring, useTransform } from 'framer-motion'
-import { IsMobileContext } from '../../util/is-mobile-context.js'
+import { IsMobileContext } from '../util/is-mobile-context.js'
 
 export const SmoothScroll = ({ children }) => {
   const isMobile = useContext(IsMobileContext)

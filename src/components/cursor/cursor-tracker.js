@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from 'react'
 import { Cursor } from './cursor.js'
 import { IsMobileContext } from '../../util/is-mobile-context.js'
 
-export const CursorWrapper = ({ children }) => {
+export const CursorTracker = ({ children }) => {
   const isMobile = useContext(IsMobileContext)
 
   const ref = useRef(null)

@@ -1,0 +1,1 @@
+export const ContentWrapper = ({ children, className = '' }) => <div className={ `pt-4 horizontal-spacing ${ className }` }>{ children }</div>

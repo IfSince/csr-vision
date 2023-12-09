@@ -1,28 +1,29 @@
 import { Seo } from '../components/seo.js'
-import { HeaderSection } from '../components/layout/header-section.js'
 import { domAnimation, LazyMotion, useCycle, useScroll } from 'framer-motion'
 import { H1 } from '../components/typography/h1.js'
-import { ScrollButton } from '../components/button/scroll-button.js'
+import { ScrollButton } from '../components/buttons/scroll-button.js'
 import { DefaultText } from '../components/typography/default-text.js'
-import { Attributes } from '../components/layout/attributes.js'
-import { ContentSection } from '../components/layout/content-section.js'
 import { Header } from '../components/header/header.js'
-import { SmoothScroll } from '../components/layout/smooth-scroll.js'
 import { useRef, useState } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
 import { Footer } from '../components/footer/footer.js'
 import DummyVideo from '../videos/video.mp4'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { IsMobileContext } from '../util/is-mobile-context.js'
-import { CursorWrapper } from '../components/cursor/cursor-wrapper.js'
-import { Cards } from '../components/layout/cards.js'
-import { TeamMembers } from '../components/layout/team-members.js'
+import { CursorTracker } from '../components/cursor/cursor-tracker.js'
 import HeroVideo from '../videos/hero_video_upscaled.mp4'
-import { TeamMemberDetails } from '../components/cards/team-member-details.js'
 import { TEAM_MEMBERS } from '../data/team-members.js'
 import { VideoPlayerCustomCursor } from '../components/video/video-player-custom-cursor.js'
 import { VideoPlayer } from '../components/video/video-player.js'
-import { TextButton } from '../components/button/text-button.js'
+import { TextButton } from '../components/buttons/text-button.js'
+import { HeaderSection } from '../components/layout/sections/header-section.js'
+import { HeaderSectionReversed } from '../components/layout/sections/header-section-reversed.js'
+import { ContentSection } from '../components/layout/sections/content-section.js'
+import { TeamMemberDetails } from '../components/index/team-members/team-member-details.js'
+import { SmoothScroll } from '../components/smooth-scroll.js'
+import { TeamMembers } from '../components/index/team-members/team-members.js'
+import { Services } from '../components/index/services/services.js'
+import { Features } from '../components/index/features/features.js'
 
 /*
 * TODO
@@ -94,51 +95,50 @@ const IndexPage = () => {
 
             <div ref={ ourVisionSectionRef }>
               <HeaderSection title="our csr vision"
-                             subText="CSR als Chance begreifen und in die DNA ihrer Kommunikation integrieren."/>
+                             subTitle="CSR als Chance begreifen und in die DNA ihrer Kommunikation integrieren."/>
 
-              <ContentSection className="flex w-full flex-col items-center">
-                <Attributes/>
+              <ContentSection className="pt-24 md:pt-32" contentWrapperClassName="flex w-full items-center justify-center">
+                <Features/>
               </ContentSection>
 
-              <ContentSection className="grid w-fit grid-cols-1 grid-rows-2 gap-4 sm:grid-cols-2 xl:w-full xl:grid-cols-3 2xl:w-fit"
+              <ContentSection theme="dark"
                               title="Gemeinsam deine Corporate Social Responsibility gestalten."
-                              variant="dark">
-                <Cards/>
+                              contentWrapperClassName="grid w-fit grid-cols-1 grid-rows-2 gap-4 sm:grid-cols-2 xl:w-full xl:grid-cols-3 2xl:w-fit">
+                <Services/>
               </ContentSection>
             </div>
 
             <div ref={ aboutUsSectionRef }>
-              <HeaderSection title="who we are"
-                             subText="Ein hart designendes Team von Spezialisten aus den Generationen X - Z."
-                             variant="reversed"/>
+              <HeaderSectionReversed title="who we are"
+                                     subTitle="Ein hart designendes Team von Spezialisten aus den Generationen X - Z."/>
 
-              <ContentSection className="flex justify-end" subSection={ true }>
+              <ContentSection className="flex justify-end">
                 <TeamMembers teamMembers={ TEAM_MEMBERS }
                              setSelectedTeamMember={ setSelectedTeamMember }
                              toggleTeamMemberPanelVisible={ toggleTeamMemberPanelVisible }/>
               </ContentSection>
 
-              <CursorWrapper>
+              <CursorTracker>
                 {
                   ({ updateCursor }) => (
-                    <ContentSection title="Space für Image Film oder ähnliches Videotechnisch." variant="dark">
+                    <ContentSection theme="dark" title="Space für Image Film oder ähnliches Videotechnisch.">
                       <VideoPlayerCustomCursor updateCursor={ updateCursor }>
                         <source src={ DummyVideo } type="video/mp4"/>
                       </VideoPlayerCustomCursor>
                     </ContentSection>
                   )
                 }
-              </CursorWrapper>
+              </CursorTracker>
             </div>
 
             <div ref={ contactSectionRef }>
               <HeaderSection title="interested?"
-                             subText="Show us your project and we'll find a way."
-                             subElement={
-                               <a href="mailto:abc@example.com">
-                                 <TextButton>Schreib uns</TextButton>
-                               </a>
-                             }/>
+                             subTitle="Show us your project and we'll find a way.">
+                <a className="mt-8 block w-fit md:mt-10 lg:mt-12"
+                   href="mailto:abc@example.com">
+                  <TextButton>Schreib uns</TextButton>
+                </a>
+              </HeaderSection>
             </div>
           </main>
 

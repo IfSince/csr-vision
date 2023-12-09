@@ -1,4 +1,4 @@
-import { TeamMember } from '../cards/team-member.js'
+import { TeamMember } from './team-member.js'
 
 export const TeamMembers = ({ teamMembers, setSelectedTeamMember, toggleTeamMemberPanelVisible }) => {
   const onClickFn = (teamMember) => {
