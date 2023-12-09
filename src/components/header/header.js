@@ -7,12 +7,10 @@ import { Menu } from './menu.js'
 
 const variants = {
   initial: {
-    y: 0,
     backgroundColor: 'rgba(0, 0, 0, 0)',
     color: theme.colors.white,
   },
   scrolled: {
-    y: 0,
     backgroundColor: theme.colors.white,
   },
 }
