@@ -1,5 +1,4 @@
 import { m } from 'framer-motion'
-import { DEFAULT_REVEAL_TRANSITION } from '../../animations/config.js'
 import { HeaderWrapper } from '../../layout/wrapper/header-wrapper.js'
 import { H3 } from '../../typography/h3.js'
 import { IconButton } from '../../buttons/icon-button.js'
@@ -13,9 +12,17 @@ import { ZoomHover } from '../../animations/zoom-hover.js'
 const variants = {
   visible: {
     y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [.44, .71, .27, 1],
+    }
   },
   hidden: {
     y: '120%',
+    transition: {
+      duration: 0.4,
+      ease: [.44, .71, .27, 1],
+    },
   },
 }
 
@@ -36,8 +43,7 @@ export const TeamMemberDetails = ({ name, image, description, visible, toggleVis
     <m.div className="fixed h-screen w-full overflow-y-scroll overscroll-y-contain bg-white no-scrollbar z-[9999]"
            variants={ variants }
            animate={ visible ? 'visible' : 'hidden' }
-           initial="hidden"
-           transition={ { ease: DEFAULT_REVEAL_TRANSITION.ease } }>
+           initial="hidden">
       <HeaderWrapper spacingType="content" className="flex-row items-center justify-between">
         <H3 animated={ false }>{ name }</H3>
         <IconButton size="md-scaling" onClick={ toggleVisible }>

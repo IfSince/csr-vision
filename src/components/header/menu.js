@@ -4,22 +4,16 @@ import MenuIcon from '../../images/icons/menu.svg'
 import { LinkedinIcon } from '../icons/socials/linkedin-icon.js'
 import { InstagramIcon } from '../icons/socials/instagram-icon.js'
 import { LinkIconButton } from '../buttons/link-icon-button.js'
+import { SLIDE_IN_TRANSITION } from '../animations/config.js'
 
 const menuVariants = {
   open: {
     y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [.25, .99, .26, .99],
-    },
+    transition: { duration: 0.7, ease: [.25, .99, .26, .99], },
   },
   closed: {
     y: 'var(--menu-transition)',
-    transition: {
-      delay: 0.5,
-      duration: 0.4,
-      ease: [.44, .71, .27, 1],
-    },
+    transition: { ...SLIDE_IN_TRANSITION, delay: 0.5, },
   },
 }
 

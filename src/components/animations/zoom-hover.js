@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import { DEFAULT_REVEAL_TRANSITION } from './config.js'
+import { REVEAL_TRANSITION } from './config.js'
 import { twMerge } from 'tailwind-merge'
 
 const config = (trigger) => {
@@ -7,7 +7,7 @@ const config = (trigger) => {
     variants: {
       zoom: { scale: 1.05 },
     },
-    transition: { ...DEFAULT_REVEAL_TRANSITION, duration: 0.5 },
+    transition: { ...REVEAL_TRANSITION, duration: 0.5 },
   }
 
   return trigger === 'self' ? { ...config, whileHover: 'zoom' } : config

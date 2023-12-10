@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import { DEFAULT_REVEAL_TRANSITION } from './config.js'
+import { REVEAL_TRANSITION } from './config.js'
 
 const variants = {
   hidden: {
@@ -21,7 +21,7 @@ export const LineReveal = ({ children }) => {
       {
         children?.split(' ').map((word, index) =>
           <div className="clip-path" key={ index }>
-            <m.div variants={ variants } transition={ DEFAULT_REVEAL_TRANSITION }>
+            <m.div variants={ variants } transition={ REVEAL_TRANSITION }>
               { word }&nbsp;
             </m.div>
           </div>,

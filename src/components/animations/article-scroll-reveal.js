@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import { DEFAULT_REVEAL_TRANSITION } from './config.js'
+import { REVEAL_TRANSITION } from './config.js'
 
 const config = {
   variants: {
@@ -9,7 +9,7 @@ const config = {
   initial: 'hidden',
   whileInView: 'visible',
   viewport: { once: true, margin: '0px 0px -100px 0px' },
-  transition: { ease: DEFAULT_REVEAL_TRANSITION.ease },
+  transition: { ease: REVEAL_TRANSITION.ease },
 }
 
 export const ArticleScrollReveal = ({ children, ...props }) =>

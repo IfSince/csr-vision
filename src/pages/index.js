@@ -112,7 +112,7 @@ const IndexPage = () => {
               <HeaderSectionReversed title="who we are"
                                      subTitle="Ein hart designendes Team von Spezialisten aus den Generationen X - Z."/>
 
-              <ContentSection className="flex justify-end">
+              <ContentSection className="flex sm:justify-end">
                 <TeamMembers teamMembers={ TEAM_MEMBERS }
                              setSelectedTeamMember={ setSelectedTeamMember }
                              toggleTeamMemberPanelVisible={ toggleTeamMemberPanelVisible }/>

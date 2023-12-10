@@ -4,6 +4,7 @@ import LogoLight from '../../images/logo-variants/logo_light.svg'
 import { useState } from 'react'
 import { theme } from '../../../tailwind.config.js'
 import { Menu } from './menu.js'
+import { SLIDE_IN_TRANSITION } from '../animations/config.js'
 
 const variants = {
   initial: {
@@ -29,7 +30,7 @@ export const Header = ({ items }) => {
     <m.header className="fixed top-0 h-16 w-full z-[9000] md:h-20 md:overflow-hidden"
               variants={ variants }
               animate={ headerScrolled ? 'scrolled' : 'initial' }
-              transition={ { duration: 0.4, ease: [.44, .71, .27, 1] } }>
+              transition={ SLIDE_IN_TRANSITION }>
       <div className="flex h-full w-full items-center justify-between horizontal-spacing">
         <a href="/" className="flex h-full w-28 items-center justify-center md:w-32">
           {
