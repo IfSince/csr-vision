@@ -22,6 +22,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-mdx',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -45,14 +46,21 @@ module.exports = {
       __key: 'images',
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: `${ __dirname }/blog`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-breakpoints',
       options: {
         queries: {
           sm: '(max-width: 640px)',
           md: '(max-width: 768px)',
           lg: '(max-width: 1024px)',
-        }
-      }
+        },
+      },
     },
   ],
 }

@@ -57,7 +57,7 @@ export const TeamMemberDetails = ({ name, image, description, visible, toggleVis
         </div>
 
         <div className="col-start-1 w-full sm:col-span-4 lg:col-span-2 lg:col-start-1 lg:row-start-1 2xl:col-span-4">
-          <div className="h-full max-w-sm overflow-hidden rounded-sm bg-black aspect-[1/1.25]">
+          <div className="h-full max-w-sm 2xl:max-w-md overflow-hidden rounded-sm bg-black aspect-[1/1.25]">
             <ZoomHover>
               { image }
             </ZoomHover>

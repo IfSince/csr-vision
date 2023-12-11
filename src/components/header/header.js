@@ -5,18 +5,19 @@ import { useState } from 'react'
 import { theme } from '../../../tailwind.config.js'
 import { Menu } from './menu.js'
 import { SLIDE_IN_TRANSITION } from '../animations/config.js'
+import { Link } from 'gatsby'
 
-const variants = {
-  initial: {
-    backgroundColor: 'rgba(0, 0, 0, 0)',
-    color: theme.colors.white,
-  },
-  scrolled: {
-    backgroundColor: theme.colors.white,
-  },
-}
+export const Header = ({ items, withBackground = false }) => {
+  const variants = {
+    initial: {
+      backgroundColor: 'rgba(250,249,246,0)',
+      color: withBackground ? theme.colors.white : theme.colors.black,
+    },
+    scrolled: {
+      backgroundColor: theme.colors.white,
+    },
+  }
 
-export const Header = ({ items }) => {
   const { scrollY } = useScroll()
 
   const [mobileOpen, toggleMobileOpen] = useCycle(false, true)
@@ -32,11 +33,11 @@ export const Header = ({ items }) => {
               animate={ headerScrolled ? 'scrolled' : 'initial' }
               transition={ SLIDE_IN_TRANSITION }>
       <div className="flex h-full w-full items-center justify-between horizontal-spacing">
-        <a href="/" className="flex h-full w-28 items-center justify-center md:w-32">
+        <Link to="/" className="flex h-full w-28 items-center justify-center md:w-32">
           {
-            <img className="h-auto w-full" src={ (!headerScrolled && !mobileOpen) ? LogoLight : Logo } alt="Logo"/>
+            <img className="h-auto w-full" src={ (!headerScrolled && !mobileOpen && withBackground) ? LogoLight : Logo } alt="Logo"/>
           }
-        </a>
+        </Link>
 
         <Menu items={ items }
               isOpen={ mobileOpen }
