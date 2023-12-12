@@ -35,7 +35,7 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
            initial="hidden"
            transition={ SLIDE_IN_TRANSITION }>
       <HeaderWrapper spacingType="content" className="flex-row flex-wrap xxs:flex-nowrap items-center justify-between gap-y-4 pt-20 pb-4 md:pt-20 xl:pt-20 2xl:pt-20">
-        <H2 animated={ false }>{ name }</H2>
+        <H2 animated={ false } className="text-3xl-scaling">{ name }</H2>
         <div>
           <IconButton size="md-scaling" onClick={ toggleVisible }>
             <CloseIcon/>
@@ -56,7 +56,7 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
           </IconButton>
         </div>
 
-        <div className="mb-8 sm:col-span-5 sm:row-start-1 lg:col-span-4 lg:col-start-3 lg:mx-14 lg:mb-0 2xl:col-span-5 2xl:col-start-5">
+        <div className="mb-8 sm:col-span-5 sm:row-start-1 lg:col-span-4 lg:col-start-3 lg:mx-14 lg:mb-0 2xl:col-span-6 2xl:col-start-4">
           <LargeText className="block max-w-lg sm:max-w-xl xl:max-w-3xl">{ description }</LargeText>
           <div className="mt-8 flex gap-4">
             {
@@ -70,7 +70,7 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
         </div>
 
         <div className="col-start-1 w-full overflow-hidden sm:col-span-4 lg:col-span-2 lg:col-start-1 lg:row-start-1 2xl:col-span-3">
-          <div className="h-full max-w-sm overflow-hidden rounded-sm bg-black aspect-[1/1.25] lg:h-fit">
+          <div className="h-full max-w-[22rem] overflow-hidden rounded-sm bg-black aspect-[1/1.25] lg:h-fit">
             <ZoomHover>
               { image }
             </ZoomHover>
