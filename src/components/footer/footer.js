@@ -46,11 +46,8 @@ export const Footer = ({ items }) => {
         </div>
 
 
-        <div className="flex w-full flex-wrap justify-between gap-x-3 gap-y-4">
-          <a className="font-light text-black/70 underline underline-offset-4" href="/">Impressum</a>
-          <div className="flex gap-3">
-            <span className="font-light text-black/70">© 2023 Copyright csr.vision</span>
-          </div>
+        <div className="flex w-full justify-end gap-x-3 gap-y-4">
+          <span className="font-light text-black/70">© 2023 Copyright csr.vision</span>
         </div>
 
       </div>
