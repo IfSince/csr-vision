@@ -4,7 +4,6 @@ import { LinkedinIcon } from '../icons/socials/linkedin-icon.js'
 import { GroupHover } from '../group-hover.js'
 import { GroupHoverListItem } from '../group-hover-list-item.js'
 import { LinkIconButton } from '../buttons/link-icon-button.js'
-import { InstagramIcon } from '../icons/socials/instagram-icon.js'
 
 export const Footer = ({ items }) => {
 
@@ -33,20 +32,12 @@ export const Footer = ({ items }) => {
           <ul className="flex grow-0 flex-col gap-5 pr-8 min-w-[20%]">
             <li className="flex flex-col">
               <span className="font-semibold">Email</span>
-              <a className="text-black/70 underline underline-offset-4" href="mailto:business@csr-vision.de">business@csr-vision.de</a>
-            </li>
-            <li className="flex flex-col">
-              <span className="font-semibold">Telefon</span>
-              <a className="text-black/70 underline underline-offset-4" href="tel:+491757576104">(+49) 175 7576104</a>
+              <a className="text-black/70 underline underline-offset-4" href="mailto:csr-vision@gmx.de">csr-vision@gmx.de</a>
             </li>
 
             <li className="mt-2">
               <div className="flex gap-3">
-                <LinkIconButton size="sm" label="Instagram">
-                  <InstagramIcon/>
-                </LinkIconButton>
-
-                <LinkIconButton size="sm" label="LinkedIn">
+                <LinkIconButton size="sm" label="Go to LinkedIn" link="https://www.linkedin.com/in/csr-vision" target="_blank">
                   <LinkedinIcon/>
                 </LinkIconButton>
               </div>
@@ -61,7 +52,7 @@ export const Footer = ({ items }) => {
             <a className="font-light text-black/70 underline underline-offset-4" href="/">Datenschutz</a>
           </div>
           <div className="flex gap-3">
-            <span className="font-light text-black/70">© 2023 Copyright CSR Vision</span>
+            <span className="font-light text-black/70">© 2023 Copyright csr.vision</span>
           </div>
         </div>
 

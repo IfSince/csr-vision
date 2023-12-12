@@ -29,7 +29,6 @@ export const Service = ({ title, description, src, alt, className, iconClasses =
                alt={ alt }/>
         </ZoomHover>
         <H4 className="h-auto mb-[0.5em] sm:h-[10vw] sm:mb-0">{ title }</H4>
-        <DefaultText className="mb-4 block lg:mb-6 xl:mb-8">Header Random</DefaultText>
         <DefaultText>{ description }</DefaultText>
       </div>
     </ArticleScrollReveal>

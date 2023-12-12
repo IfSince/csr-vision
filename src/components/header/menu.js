@@ -1,8 +1,7 @@
 import { m } from 'framer-motion'
-import CloseIcon from '../../images/icons/close.svg'
-import MenuIcon from '../../images/icons/menu.svg'
+import CloseIcon from '../../images/icons/dark/close.svg'
+import MenuIcon from '../../images/icons/dark/menu.svg'
 import { LinkedinIcon } from '../icons/socials/linkedin-icon.js'
-import { InstagramIcon } from '../icons/socials/instagram-icon.js'
 import { LinkIconButton } from '../buttons/link-icon-button.js'
 import { SLIDE_IN_TRANSITION } from '../animations/config.js'
 
@@ -73,13 +72,9 @@ export const Menu = ({ items, isOpen, toggleOpen }) => {
               </li>,
             )
           }
-          <li className="mt-10 p-2 clip-path md:hidden">
+          <li className="mt-6 p-2 clip-path md:hidden">
             <m.div className="flex gap-6" variants={ itemVariants }>
-              <LinkIconButton size="md" label="Instagram">
-                <InstagramIcon/>
-              </LinkIconButton>
-
-              <LinkIconButton size="md" label="LinkedIn">
+              <LinkIconButton size="md" label="Go to LinkedIn" link="https://www.linkedin.com/in/csr-vision" target="_blank">
                 <LinkedinIcon/>
               </LinkIconButton>
             </m.div>

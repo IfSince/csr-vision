@@ -5,8 +5,8 @@ const { theme } = require('./tailwind.config.js')
  */
 module.exports = {
   siteMetadata: {
-    title: 'csr vision',
-    description: 'csr vision - designing responsibility',
+    title: 'csr.vision',
+    description: 'csr.vision - designing responsibility',
     author: 'Leon Laade',
     siteUrl: 'https://csr.vision/',
     image: 'src/images/logo-variants/icon.svg',
@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'csr vision',
-        short_name: 'csr vision',
+        name: 'csr.vision',
+        short_name: 'csr.vision',
         start_url: '/',
         background_color: theme.colors.white,
         theme_color: theme.colors.green['800'],
