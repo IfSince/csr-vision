@@ -7,13 +7,10 @@ import { Header } from '../components/header/header.js'
 import { useRef, useState } from 'react'
 import { scrollToTarget } from '../util/scroll-to-target.js'
 import { Footer } from '../components/footer/footer.js'
-import DummyVideo from '../videos/video.mp4'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { IsMobileContext } from '../util/is-mobile-context.js'
-import { CursorTracker } from '../components/cursor/cursor-tracker.js'
 import HeroVideo from '../videos/hero_video_upscaled.mp4'
 import { TEAM_MEMBERS } from '../data/team-members.js'
-import { VideoPlayerCustomCursor } from '../components/video/video-player-custom-cursor.js'
 import { VideoPlayer } from '../components/video/video-player.js'
 import { TextButton } from '../components/buttons/text-button.js'
 import { HeaderSection } from '../components/layout/sections/header-section.js'
@@ -109,18 +106,6 @@ const IndexPage = () => {
                              setSelectedTeamMember={ setSelectedTeamMember }
                              toggleTeamMemberPanelVisible={ toggleTeamMemberPanelVisible }/>
               </ContentSection>
-
-              <CursorTracker>
-                {
-                  ({ updateCursor }) => (
-                    <ContentSection theme="dark" title="Space für Image Film oder ähnliches Videotechnisch.">
-                      <VideoPlayerCustomCursor updateCursor={ updateCursor }>
-                        <source src={ DummyVideo } type="video/mp4"/>
-                      </VideoPlayerCustomCursor>
-                    </ContentSection>
-                  )
-                }
-              </CursorTracker>
             </div>
 
             <div ref={ contactSectionRef }>
