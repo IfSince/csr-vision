@@ -34,26 +34,30 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
            animate={ visible ? 'visible' : 'hidden' }
            initial="hidden"
            transition={ SLIDE_IN_TRANSITION }>
-      <HeaderWrapper spacingType="content" className="flex-row items-center justify-between pt-20 pb-4 md:pt-20 xl:pt-20 2xl:pt-20">
+      <HeaderWrapper spacingType="content" className="flex-row flex-wrap xxs:flex-nowrap items-center justify-between gap-y-4 pt-20 pb-4 md:pt-20 xl:pt-20 2xl:pt-20">
         <H2 animated={ false }>{ name }</H2>
-        <IconButton size="md-scaling" onClick={ toggleVisible }>
-          <CloseIcon/>
-        </IconButton>
+        <div>
+          <IconButton size="md-scaling" onClick={ toggleVisible }>
+            <CloseIcon/>
+          </IconButton>
+        </div>
       </HeaderWrapper>
 
       <ContentWrapper className="mb-20 grid w-full grid-cols-1 sm:grid-cols-7 lg:mb-10 2xl:grid-cols-10">
         <div className="col-span-1 mb-10 flex justify-end gap-4 sm:col-span-2 sm:col-start-6 sm:mb-0 lg:col-span-1 lg:col-start-7 2xl:col-start-10">
           <IconButton size="md-scaling" onClick={ selectPrevious }>
+            <span className="sr-only">Select previous team member</span>
             <ArrowLeftIcon/>
           </IconButton>
 
           <IconButton size="md-scaling" onClick={ selectNext }>
+            <span className="sr-only">Select next team member</span>
             <ArrowRightIcon/>
           </IconButton>
         </div>
 
         <div className="mb-8 sm:col-span-5 sm:row-start-1 lg:col-span-4 lg:col-start-3 lg:mx-14 lg:mb-0 2xl:col-span-5 2xl:col-start-5">
-          <LargeText className="block max-w-lg sm:max-w-xl xl:max-w-2xl">{ description }</LargeText>
+          <LargeText className="block max-w-lg sm:max-w-xl xl:max-w-3xl">{ description }</LargeText>
           <div className="mt-8 flex gap-4">
             {
               skills.map(skill =>
@@ -65,7 +69,7 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
           </div>
         </div>
 
-        <div className="col-start-1 w-full overflow-hidden sm:col-span-4 lg:col-span-2 lg:col-start-1 lg:row-start-1 2xl:col-span-4">
+        <div className="col-start-1 w-full overflow-hidden sm:col-span-4 lg:col-span-2 lg:col-start-1 lg:row-start-1 2xl:col-span-3">
           <div className="h-full max-w-sm overflow-hidden rounded-sm bg-black aspect-[1/1.25] lg:h-fit">
             <ZoomHover>
               { image }

@@ -12,7 +12,7 @@ export const Footer = ({ items }) => {
       <div className="pt-24 pb-8 horizontal-spacing">
         <div className="mb-20 flex w-full flex-row flex-wrap gap-x-8 gap-y-10 md:mb-32">
           <div className="grow">
-            <img className="h-20 w-fit sm:h-24 md:h-28 lg:h-32" src={ logo_with_claim } alt="Logo"/>
+            <img className="h-20 w-fit sm:h-24 md:h-28 lg:h-32" src={ logo_with_claim } alt="Logo" loading="lazy"/>
           </div>
 
           <div className="flex grow flex-col justify-between">
@@ -47,10 +47,7 @@ export const Footer = ({ items }) => {
 
 
         <div className="flex w-full flex-wrap justify-between gap-x-3 gap-y-4">
-          <div className="flex gap-3">
-            <a className="font-light text-black/70 underline underline-offset-4" href="/">Impressum</a>
-            <a className="font-light text-black/70 underline underline-offset-4" href="/">Datenschutz</a>
-          </div>
+          <a className="font-light text-black/70 underline underline-offset-4" href="/">Impressum</a>
           <div className="flex gap-3">
             <span className="font-light text-black/70">© 2023 Copyright csr.vision</span>
           </div>

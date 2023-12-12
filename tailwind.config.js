@@ -14,6 +14,7 @@ module.exports = {
         'undotted': ['Undotted', 'Overpass', ...defaultTheme.fontFamily.sans],
       },
       screens: {
+        'xxs': '360px',
         'xs': '400px',
         '2xs': '500px',
       },
