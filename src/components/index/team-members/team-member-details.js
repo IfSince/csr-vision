@@ -35,7 +35,7 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
            initial="hidden"
            transition={ SLIDE_IN_TRANSITION }>
       <HeaderWrapper spacingType="content" className="flex-row flex-wrap xxs:flex-nowrap items-center justify-between gap-y-4 pt-20 pb-4 md:pt-20 xl:pt-20 2xl:pt-20">
-        <H2 animated={ false } className="text-3xl-scaling">{ name }</H2>
+        <H2 animated={ false } className="text-3xl-scaling lowercase">{ name }</H2>
         <div>
           <IconButton size="md-scaling" onClick={ toggleVisible }>
             <span className="sr-only">Close panel</span>
