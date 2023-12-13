@@ -23,7 +23,7 @@ export const SERVICES = [
   },
   {
     title: 'Creative AI',
-    description: `csr.vision steht für eine nachhaltige und hocheffektive Nutzung von künstlicher Intelligenz in Projekten, die sowohl höchsten kreativen als auch ethischen Ansprüchen gerecht wird.
+    description: `csr vision steht für eine nachhaltige und hocheffektive Nutzung von künstlicher Intelligenz in Projekten, die sowohl höchsten kreativen als auch ethischen Ansprüchen gerecht wird.
                   Dabei ist unser Leitmotiv stets Augmentierung und Effizienz, niemals der Ersatz menschlicher Intelligenz oder Kreativität.`,
     className: 'xl:col-start-2 xl:col-end-2 xl:row-start-2 xl:row-end-2',
     src: DesignAndAi,
@@ -31,7 +31,7 @@ export const SERVICES = [
   },
   {
     title: 'Movies & VFX',
-    description: `Nichts erzählt nachhaltige Geschichten so gut wie ein Video. Bei csr.vision verschreiben wir uns dabei dem hochwertigen visuellen Storytelling, nicht sterilen Werbeclips.
+    description: `Nichts erzählt nachhaltige Geschichten so gut wie ein Video. Bei csr vision verschreiben wir uns dabei dem hochwertigen visuellen Storytelling, nicht sterilen Werbeclips.
                   Egal, ob Erklärungsvideo, Dokumentation oder Interviews: Die Bilder unseres Videografen bereichern und bewegen.`,
     className: 'xl:col-start-3 xl:col-end-3 xl:row-start-2 xl:row-end-2',
     src: Film,

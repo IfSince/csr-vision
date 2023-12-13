@@ -32,7 +32,7 @@ const IndexPage = () => {
   const contactSectionRef = useRef(null)
 
   const navItems = [
-    { index: 1, text: 'csr.vision', onClick: () => scrollToTarget(ourVisionSectionRef, scrollY) },
+    { index: 1, text: 'csr vision', onClick: () => scrollToTarget(ourVisionSectionRef, scrollY) },
     { index: 2, text: 'who we are', onClick: () => scrollToTarget(aboutUsSectionRef, scrollY) },
     { index: 3, text: 'contact', onClick: () => scrollToTarget(contactSectionRef, scrollY) },
   ]
@@ -68,7 +68,7 @@ const IndexPage = () => {
 
                 <div className="flex flex-col">
                   <DefaultText className="mt-1 max-w-xs self-start sm:max-w-sm md:self-end xl:max-w-md">
-                    <span className="font-bold text-green-500">csr.vision</span> hilft Unternehmen dabei, CSR als Chance zu begreifen.
+                    <span className="font-bold text-green-500">csr vision</span> hilft Unternehmen dabei, CSR als Chance zu begreifen.
                     Durch Reduzierung der Komplexität, Kuratieren und crossmediale Aufbereitung verwandeln wir CSR-Berichte, die sonst nur von Analysten und
                     Stakeholdern gelesen werden, in echtes Storytelling, das auch ihre Community und Kunden begeistern wird.
                   </DefaultText>
@@ -83,7 +83,7 @@ const IndexPage = () => {
             </section>
 
             <div ref={ ourVisionSectionRef }>
-              <HeaderSection title="our csr.vision"
+              <HeaderSection title="our csr vision"
                              subTitle="CSR als Chance begreifen und in die DNA ihrer Kommunikation integrieren."/>
 
               <ContentSection className="pt-24 md:pt-32" contentWrapperClassName="flex w-full items-center justify-center">

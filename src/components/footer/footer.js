@@ -47,7 +47,7 @@ export const Footer = ({ items }) => {
 
 
         <div className="flex w-full justify-end gap-x-3 gap-y-4">
-          <span className="font-light text-black/70">© 2023 Copyright csr.vision</span>
+          <span className="font-light text-black/70">© 2023 Copyright csr vision</span>
         </div>
 
       </div>
