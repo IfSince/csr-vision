@@ -61,7 +61,7 @@ module.exports = {
         mergeStyleHashes: false,
         directives: {
           "script-src": "'self' 'unsafe-inline'",
-          "style-src": "'self' 'unsafe-inline'"
+          "style-src": "'self' 'unsafe-inline' 'unsafe-eval'"
         }
       }
     }
