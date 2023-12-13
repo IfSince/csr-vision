@@ -38,6 +38,7 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
         <H2 animated={ false } className="text-3xl-scaling">{ name }</H2>
         <div>
           <IconButton size="md-scaling" onClick={ toggleVisible }>
+            <span className="sr-only">Close panel</span>
             <CloseIcon/>
           </IconButton>
         </div>
