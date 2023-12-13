@@ -62,7 +62,7 @@ export const TEAM_MEMBERS = [
                   2022 folgte dann schließlich der Studiengang Film Production an der SAE, in dessen Rahmen er Teil von csr.vision wurde.`
   },
   {
-    name: 'Jan',
+    name: 'Jan Mindermann',
     role: 'VFX-Engineer',
     className: 'lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-2',
     skills: [
