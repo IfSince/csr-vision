@@ -35,7 +35,6 @@ module.exports = {
         icon: 'src/images/logo-variants/icon.svg',
       },
     },
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
