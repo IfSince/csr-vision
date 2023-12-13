@@ -53,5 +53,17 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: 'gatsby-plugin-csp',
+      options: {
+        disableOnDev: false,
+        mergeScriptHashes: false,
+        mergeStyleHashes: false,
+        directives: {
+          "script-src": "'self' 'unsafe-inline'",
+          "style-src": "'self' 'unsafe-inline'"
+        }
+      }
+    }
   ],
 }
