@@ -55,8 +55,10 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-csp',
-      directives: {
-        "style-src": "'self' 'unsafe-inline'",
+      options: {
+        directives: {
+          "style-src": "'self' 'unsafe-inline'",
+        }
       }
     }
   ],
