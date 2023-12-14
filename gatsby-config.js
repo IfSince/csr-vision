@@ -6,7 +6,7 @@ const { theme } = require('./tailwind.config.js')
 module.exports = {
   siteMetadata: {
     title: 'csr vision',
-    description: 'designing responsibility',
+    description: 'csr vision hilft Unternehmen dabei, CSR als Chance zu begreifen. Durch Reduzierung der Komplexität, Kuratieren und crossmediale Aufbereitung verwandeln wir CSR-Berichte, die sonst nur von Analysten und Stakeholdern gelesen werden, in echtes Storytelling, das auch ihre Community und Kunden begeistern wird.',
     author: 'csr vision',
     siteUrl: 'https://csr.vision/',
     image: 'src/images/logo-variants/icon.svg',
@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-csp',
       options: {
-        disableOnDev: false,
+        disableOnDev: true,
         mergeScriptHashes: false,
         mergeStyleHashes: false,
         directives: {
