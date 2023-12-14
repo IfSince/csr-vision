@@ -35,6 +35,11 @@ export const Footer = ({ items }) => {
               <a className="text-black/70 underline underline-offset-4" href="mailto:csr-vision@gmx.de">csr-vision@gmx.de</a>
             </li>
 
+            <li className="flex flex-col">
+              <span className="font-semibold">Telefon</span>
+              <a className="text-black/70 underline underline-offset-4" href="tel:+4915168457786">(+49) 151 68457786</a>
+            </li>
+
             <li className="mt-2">
               <div className="flex gap-3">
                 <LinkIconButton size="sm" label="Go to LinkedIn" link="https://www.linkedin.com/in/csr-vision" target="_blank">
