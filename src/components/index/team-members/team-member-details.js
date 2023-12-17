@@ -34,7 +34,8 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
            animate={ visible ? 'visible' : 'hidden' }
            initial="hidden"
            transition={ SLIDE_IN_TRANSITION }>
-      <HeaderWrapper spacingType="content" className="flex-row flex-wrap xxs:flex-nowrap items-center justify-between gap-y-4 pt-20 pb-4 md:pt-20 xl:pt-20 2xl:pt-20">
+      <HeaderWrapper spacingType="content"
+                     className="flex-row flex-wrap xxs:flex-nowrap items-center justify-between gap-y-4 pt-20 pb-4 md:pt-20 xl:pt-20 2xl:pt-20">
         <H2 animated={ false } className="text-3xl-scaling">{ name }</H2>
         <div>
           <IconButton size="md-scaling" onClick={ toggleVisible }>
@@ -59,14 +60,18 @@ export const TeamMemberDetails = ({ name, image, description, skills = [], visib
 
         <div className="mb-8 sm:col-span-5 sm:row-start-1 lg:col-span-4 lg:col-start-3 lg:mx-14 lg:mb-0 2xl:col-span-6 2xl:col-start-4">
           <LargeText className="block max-w-lg sm:max-w-xl xl:max-w-3xl">{ description }</LargeText>
-          <div className="mt-8 flex flex-wrap gap-2 sm:gap-4">
-            {
-              skills.map(skill =>
-                <ZoomHover className="flex h-12 w-12 items-center justify-center rounded-full border border-black/30 md:h-16 md:w-16" key={ skill.alt }>
-                  <img src={ skill.icon } className="h-5 w-5 md:h-8 md:w-8" alt={ skill.alt }/>
-                </ZoomHover>,
-              )
-            }
+          <div className="mt-8 flex flex-row items-center gap-10">
+            <div className="flex flex-wrap gap-2 sm:gap-4">
+              {
+                skills.map(skill =>
+                    <span title={ skill.alt } key={ skill.alt }>
+                  <ZoomHover className="flex h-14 w-14 items-center justify-center rounded-full border border-black/30 peer md:h-16 md:w-16">
+                    <img src={ skill.icon } className="h-8 w-8" alt={ skill.alt }/>
+                  </ZoomHover>
+                </span>,
+                )
+              }
+            </div>
           </div>
         </div>
 

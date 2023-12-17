@@ -7,7 +7,7 @@ import OnlineMarketing from '../images/icons/dark/online_marketing.svg'
 import Photography from '../images/icons/dark/photography.svg'
 import GraphicDesign from '../images/icons/dark/graphic_design.svg'
 import CreativeAIOperator from '../images/icons/dark/creative_ai_operator.svg'
-import WebDesign from '../images/icons/dark/creative_ai_operator.svg'
+import WebDesign from '../images/icons/dark/web_design.svg'
 import UiUxEngineer from '../images/icons/dark/ui_ux_engineer.svg'
 import VfxSpecialist from '../images/icons/dark/vfx_specialist.svg'
 import AdvancedPostProduction from '../images/icons/dark/advanced_post_production.svg'
@@ -20,13 +20,13 @@ export const TEAM_MEMBERS = [
     role: 'Lead',
     className: 'col-start-1 col-end-1',
     skills: [
-      { icon: OnlineMarketing, alt: 'Online marketing' },
+      { icon: OnlineMarketing, alt: 'Online Marketing' },
       { icon: Photography, alt: 'Photography' },
       { icon: GraphicDesign, alt: 'Graphic Design' },
       { icon: CreativeAIOperator, alt: 'Creative AI Operator' },
       { icon: AdvancedPostProduction, alt: 'Advanced Post Production' },
-      { icon: FilmProduction, alt: 'Film production' },
-      { icon: DroneOperator, alt: 'Drone operator' },
+      { icon: FilmProduction, alt: 'Film Production' },
+      { icon: DroneOperator, alt: 'Drone Operator' },
     ],
     image: <StaticImage className="h-full w-full" src="../images/team-members/Lukas.png" alt="Lukas"/>,
     description: `Im Jahr 2016 schloss Lukas die Bezirksschule im Schweizer Kanton Aargau ab. Es folgte eine Ausbildung zum Mediamatiker und 2020 schließlich die Berufsmaturität.
@@ -42,10 +42,10 @@ export const TEAM_MEMBERS = [
     image: <StaticImage className="h-full w-full" src="../images/team-members/Kai.png" alt="Kai"/>,
     skills: [
       { icon: Consulting, alt: 'Consulting' },
-      { icon: BusinessDevelopment, alt: 'Business development' },
+      { icon: BusinessDevelopment, alt: 'Business Development' },
       { icon: Copy, alt: 'Copy' },
-      { icon: OnlineMarketing, alt: 'Online marketing' },
-      { icon: FilmProduction, alt: 'Film production' },
+      { icon: OnlineMarketing, alt: 'Online Marketing' },
+      { icon: FilmProduction, alt: 'Film Production' },
     ],
     description: `Kai ist die Generation X in unserem Team und verantwortlich für Copy, Kommunikation und die Entwicklung unseres Geschäfts.
                   Er konnte seine ersten Erfahrungen im Marketing bereits Ende der Neunzigerjahre als Teil der ersten Guerilla-Marketingkampagnen von Red Bull sammeln.
@@ -58,7 +58,7 @@ export const TEAM_MEMBERS = [
     role: 'Web Specialist',
     className: 'lg:col-start-3 lg:col-end-3',
     skills: [
-      { icon: WebDesign, alt: 'Web design' },
+      { icon: WebDesign, alt: 'Web Design' },
       { icon: UiUxEngineer, alt: 'UI/UX Engineer' },
       { icon: GraphicDesign, alt: 'Graphic Design' },
     ],
@@ -75,8 +75,8 @@ export const TEAM_MEMBERS = [
     image: <StaticImage className="h-full w-full" src="../images/team-members/Ben.png" alt="Ben"/>,
     skills: [
       { icon: AdvancedPostProduction, alt: 'Advanced Post Production' },
-      { icon: FilmProduction, alt: 'Film production' },
-      { icon: DroneOperator, alt: 'Drone operator' },
+      { icon: FilmProduction, alt: 'Film Production' },
+      { icon: DroneOperator, alt: 'Drone Operator' },
     ],
     description: `Ben ist der Filmer im Team. Sein Spezialgebiet sind Doku Formate, aber auch Werbefilme für Firmen und Vorstellungsfilme für Museen und Galerien.
                   Seine ersten Erfahrungen im Filmsektor sammelte er bereits vor knapp zehn Jahren, als er als 14-jähriger Kameraassistent bei einer NDR-Produktion in Brasilien Stative durch den Regenwald trug.
