@@ -11,6 +11,8 @@ export const HeaderSectionReversed = ({ title, subTitle, children }) =>
         <H2>{ title }</H2>
       </ColIndented>
     }
-    { subTitle && <HeaderH3>{ subTitle }</HeaderH3> }
-    { children }
+    <div>
+      { subTitle && <HeaderH3>{ subTitle }</HeaderH3> }
+      { children }
+    </div>
   </HeaderWrapper>
